@@ -1,0 +1,51 @@
+{
+  "engine": "coloc.abf (Giambartolomei 2014), single-causal-variant Wakefield ABF, priors p1=p2=1e-4 p12=1e-5",
+  "validated_scenarios": [
+    {
+      "scenario": "A_shared_causal",
+      "PP0": 0.0,
+      "PP1": 0.0,
+      "PP2": 0.0,
+      "PP3": 0.0,
+      "PP4": 1.0,
+      "expected": "PP4>0.8",
+      "verdict": "PASS"
+    },
+    {
+      "scenario": "B_distinct_causal",
+      "PP0": 0.0,
+      "PP1": 0.0,
+      "PP2": 0.0,
+      "PP3": 1.0,
+      "PP4": 0.0,
+      "expected": "PP3 high, PP4 low",
+      "verdict": "PASS"
+    },
+    {
+      "scenario": "C_one_null",
+      "PP0": 0.0,
+      "PP1": 0.8573,
+      "PP2": 0.0,
+      "PP3": 0.1265,
+      "PP4": 0.0162,
+      "expected": "PP1/PP2, PP4 low",
+      "verdict": "PASS"
+    }
+  ],
+  "real_data_access_recipe": {
+    "exposure_pQTL_HP_CD163_ferritin": "deCODE 2023 (decodinggenomics.com/health), UKB-PPP Olink (clinicaltrial NCT05449511 / aptamer list), or Sun 2023 Nat Genet trans-ancestry pQTL \u2014 request beta/se per SNP for HP, CD163, FTL/FTH.",
+    "exposure_eQTL_HMOX1": "GTEx v8 eQTL (HMOX1, whole blood / brain), or eQTLGen \u2014 beta/se per cis-SNP.",
+    "outcome_SAH_GWAS": "INGEST / GWAS Catalog SAH (GCST90136755 or latest); need beta/se/EA/OA/effect allele + N; harmonise alleles.",
+    "steps": [
+      "download sumstats",
+      "liftover to GRCh38",
+      "restrict to cis window (+/-1Mb of gene)",
+      "harmonise effect alleles",
+      "LD not required for coloc.abf (single-variant) but coloc.susie needs a reference panel (1000G)",
+      "run coloc_abf per gene-trait pair",
+      "report PP4; PP4>0.8 = shared causal signal"
+    ],
+    "blocker": "full summary statistics not retrievable in this environment (GWAS Catalog sumstats endpoints deprecated/410; pQTL/eQTL portals need bulk download or auth). No real PP4 reported."
+  },
+  "honesty": "Only the synthetic validation is reported as a result; the real coloc is NOT computed and NOT fabricated."
+}

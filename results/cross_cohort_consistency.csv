@@ -1,0 +1,11 @@
+metric,value
+n_common,17007.0
+pearson_r,0.3553404623663755
+pearson_p,0.0
+spearman_rho,0.24108706497690907
+spearman_p,1.94886188554744e-223
+n_deg36_testable,32.0
+n_reproduced,3.0
+pct_reproduced,9.375
+deg36,35.0
+deg73,0.0

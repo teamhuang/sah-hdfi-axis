@@ -1,0 +1,22 @@
+source,protein,role,detected,n_control,n_sah,median_control_log2,median_sah_log2,log2FC_sah_vs_ctrl,mannwhitney_p
+PXD030593,HP,heme scavenger (haptoglobin),True,4,4,7.986,8.622,0.636,0.0571
+PXD030593,CD163,heme-Hb endocytosis receptor,True,4,4,9.307,8.782,-0.525,0.1143
+PXD030593,HMOX1,heme catabolism (pro-oxidant arm),False,4,4,,,,
+PXD030593,FTH1,iron storage (ferritin heavy),True,4,4,8.944,8.901,-0.043,0.8857
+PXD030593,FTL,iron storage (ferritin light),True,4,4,8.746,9.249,0.504,0.4857
+PXD030593,GPX4,lipid-peroxide repair (anti-ferroptosis),False,4,4,,,,
+PXD030593,ACSL4,PUFA-PL synthesis (pro-ferroptosis),False,4,4,,,,
+PXD030593,TFRC,iron uptake (CD71),True,4,4,8.64,9.089,0.449,0.4857
+PXD030593,SLC40A1,iron export (ferroportin),False,4,4,,,,
+PXD030593,HDFI_protein,z(HMOX1)-z(FTH1+FTL)-z(GPX4),False,0,0,,,,
+PMC11267790(verbatim),HP,independent SAH-CSF cohort (authors' Table 1),True,10,23,17.3,18.9,1.62,
+PMC11267790(verbatim),TFRC,independent SAH-CSF cohort (authors' Table 1),True,7,13,11.5,12.3,0.83,
+PMC11267790(verbatim),HP,token count across ALL supplementary tables,True,n/a,n/a,,,,
+PMC11267790(verbatim),CD163,token count across ALL supplementary tables,True,n/a,n/a,,,,
+PMC11267790(verbatim),HMOX1,token count across ALL supplementary tables,False,n/a,n/a,,,,
+PMC11267790(verbatim),FTH1,token count across ALL supplementary tables,True,n/a,n/a,,,,
+PMC11267790(verbatim),FTL,token count across ALL supplementary tables,True,n/a,n/a,,,,
+PMC11267790(verbatim),GPX4,token count across ALL supplementary tables,False,n/a,n/a,,,,
+PMC11267790(verbatim),ACSL4,token count across ALL supplementary tables,False,n/a,n/a,,,,
+PMC11267790(verbatim),TFRC,token count across ALL supplementary tables,True,n/a,n/a,,,,
+PMC11267790(verbatim),SLC40A1,token count across ALL supplementary tables,False,n/a,n/a,,,,

@@ -1,0 +1,116 @@
+{
+  "variants": [
+    {
+      "variant": "canonical HMOX1-(FTH1+FTL)/2-GPX4",
+      "celltype": "Neuron",
+      "rho": 0.3365131510696631,
+      "p": 9.176858165232965e-44,
+      "n": 1604,
+      "ci_lo": 0.29188379797643604,
+      "ci_hi": 0.38050670125589636
+    },
+    {
+      "variant": "A  HMOX1-FTH1-GPX4",
+      "celltype": "Neuron",
+      "rho": 0.31554874383074133,
+      "p": 2.0515608618578363e-38,
+      "n": 1604,
+      "ci_lo": 0.26890549626589955,
+      "ci_hi": 0.3603692064197593
+    },
+    {
+      "variant": "B  HMOX1-FTL-GPX4",
+      "celltype": "Neuron",
+      "rho": 0.30352937672233166,
+      "p": 1.5546629544792234e-35,
+      "n": 1604,
+      "ci_lo": 0.259749094619037,
+      "ci_hi": 0.34880411855559534
+    },
+    {
+      "variant": "C  HMOX1-(FTH1+FTL)-SLC7A11",
+      "celltype": "Neuron",
+      "rho": 0.2362296888126985,
+      "p": 8.838035321364288e-22,
+      "n": 1604,
+      "ci_lo": 0.184479500876829,
+      "ci_hi": 0.28352521115752116
+    }
+  ],
+  "logo": [
+    {
+      "dropped": "Hmox1",
+      "rho": 0.39936409489996366,
+      "p": 1.7985063755609402e-62
+    },
+    {
+      "dropped": "Fth1",
+      "rho": 0.2742690558700718,
+      "p": 4.503563102164042e-29
+    },
+    {
+      "dropped": "Ftl1",
+      "rho": 0.27776580356015557,
+      "p": 8.341768426923217e-30
+    },
+    {
+      "dropped": "Gpx4",
+      "rho": 0.09467825925079926,
+      "p": 0.00014619927037941278
+    }
+  ],
+  "leakage_free": {
+    "rho_canon_vs_sharedGPX4_outcome": 0.3365131510696631,
+    "p0": 9.176858165232965e-44,
+    "rho_canon_vs_GPX4free_outcome": 0.06689386497121276,
+    "p1": 0.007361977835689338,
+    "rho_GPX4free_HDFI_vs_GPX4free_outcome": 0.07067488286788015,
+    "p2": 0.004627784250800095
+  },
+  "random_null": {
+    "canon_rho": 0.3365131510696631,
+    "random_max": 0.45710848443285107,
+    "random_mean_abs": 0.1927666793761814,
+    "empirical_p_one_sided": 0.071,
+    "empirical_p_two_sided": 0.1486,
+    "sign_reversed_rho": -0.3365131510696631,
+    "sign_reversed_p": 9.176858165232965e-44,
+    "n_random": 5000
+  },
+  "pca": {
+    "PC1_var_explained": 0.44842812418937683,
+    "raw_rho": 0.3365131510696631,
+    "partial_rho_given_PC1": 0.2949584770252671,
+    "partial_p": 1.4584274796730904e-33
+  },
+  "temporal": [
+    {
+      "variant": "canonical HMOX1-(FTH1+FTL)/2-GPX4",
+      "Sham": -0.435,
+      "SAH_24h": 0.173,
+      "SAH_72h": 0.19,
+      "peak": "SAH_72h"
+    },
+    {
+      "variant": "A  HMOX1-FTH1-GPX4",
+      "Sham": -0.083,
+      "SAH_24h": 0.123,
+      "SAH_72h": 0.367,
+      "peak": "SAH_72h"
+    },
+    {
+      "variant": "B  HMOX1-FTL-GPX4",
+      "Sham": -0.786,
+      "SAH_24h": 0.224,
+      "SAH_72h": 0.013,
+      "peak": "SAH_24h"
+    },
+    {
+      "variant": "C  HMOX1-(FTH1+FTL)-SLC7A11",
+      "Sham": 0.508,
+      "SAH_24h": -1.318,
+      "SAH_72h": 0.208,
+      "peak": "Sham"
+    }
+  ]
+}

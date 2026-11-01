@@ -1,0 +1,2 @@
+cohort,n,spearman_rho,spearman_p,drivers_used,suppressors_used,design
+GSE296792,77,-0.36429360113570636,0.0011256788362247424,6,6,"ICH whole blood, all samples pooled"

@@ -1,0 +1,59 @@
+{
+  "figure_index": 30,
+  "status": "not-executed",
+  "reviewer_request": "Protein-level (not RNA) corroboration of HP/HMOX1/ferritin etc. elevated in SAH or stroke patients.",
+  "target_proteins": {
+    "HP": "haptoglobin",
+    "HMOX1": "heme oxygenase 1",
+    "FTH1": "ferritin heavy chain",
+    "FTL": "ferritin light chain",
+    "CD163": "scavenger receptor CD163",
+    "TFRC": "soluble transferrin receptor",
+    "SLC40A1": "ferroportin"
+  },
+  "repositories_searched": [
+    "NCBI GEO E-utilities (db=gds)",
+    "PRIDE archive REST v2",
+    "iProX/megaX (no responsive API)",
+    "PeptideAtlas REST (unreachable)"
+  ],
+  "queries": [
+    "(Olink OR SomaScan OR \"plasma proteomics\" OR \"serum proteomics\" OR \"blood proteome\") AND (hemorrhage OR subarachnoid OR stroke OR aneurysm OR cerebral OR ischemic) AND \"Homo sapiens\"[porg] AND gse[ETYP]",
+    "(haptoglobin OR HMOX1 OR ferritin OR FTH1 OR FTL OR CD163 OR TFRC OR SLC40A1) AND stroke AND \"Homo sapiens\"[porg] AND gse[ETYP]",
+    "(haptoglobin OR HMOX1 OR ferritin OR CD163) AND (subarachnoid OR hemorrhage) AND \"Homo sapiens\"[porg] AND gse[ETYP]",
+    "\"soluble CD163\" AND \"Homo sapiens\"[porg] AND gse[ETYP]",
+    "Olink[Platform] AND \"Homo sapiens\"[porg] AND gse[ETYP]"
+  ],
+  "geo_candidates_screened": 32,
+  "geo_candidates_qualifying": 0,
+  "qualifying_accessions": [],
+  "near_miss_accessions_and_reason": [
+    {
+      "GSE": "GSE294456",
+      "reason": "Olink plasma present but design = atrial-fibrillation whole blood/T-cell, not a plasma case-vs-control heme-protein stroke cohort"
+    },
+    {
+      "GSE": "GSE203399",
+      "reason": "methylation EWAS in stroke outcome; not proteomics"
+    },
+    {
+      "GSE": "GSE157789",
+      "reason": "plasma proteomics but severe COVID-19 ARDS, not SAH/stroke"
+    },
+    {
+      "GSE": "GSE308560",
+      "reason": "Olink ExploreHT plasma but glomerular disease, not cerebrovascular"
+    },
+    {
+      "GSE": "GSE163256 / GSE296792",
+      "reason": "already used for RNA (monocyte/ICH) in this project; transcriptomic, not plasma proteomic"
+    }
+  ],
+  "pride_search_note": "PRIDE archive v2 /search/projects in this environment returns recent submissions regardless of queryString (free-text relevance ranking non-functional); PRIDE search backend not usable at tractable size.",
+  "reason_not_executed": "A large number of SAH/ICH/stroke GEO cohorts are transcriptomic (RNA-seq/miRNA/ATAC), not proteomic. The genuinely proteomic Olink/SomaScan/LC-MS plasma cohorts deposited on GEO are all non-cerebrovascular (atherosclerosis, sepsis, glomerular disease, Down syndrome, AF). No openly-downloadable, parseable-at-tractable-size plasma/serum proteomics case-vs-control in SAH/aSAH/ICH/acute-ischemic-stroke that measures HP/HMOX1/FTH1/FTL/CD163/TFRC/SLC40A1 was located. Per integrity rule 3 no proxy was substituted for the requested analysis; Fig 30 is therefore skipped.",
+  "fallback_note": "Task 2 (GSE269478) does provide a genuine PROTEIN (CITE-seq ADT) read of CD163/MRC1/HLA-DR -- but in healthy human monocytes, single-cell surface protein, NOT plasma bulk levels of the heme proteins in patients; it does not and is not labelled as the SAH patient-protein-level proof the reviewer asked for.",
+  "figures_skipped": [
+    "Fig30_proteomics_association"
+  ],
+  "conclusion": "No fabricated numbers. Protein-level SAH/stroke plasma corroboration remains an open gap; it requires a patient plasma Olink/SomaScan LC-MS cohort that is not openly available in these repositories at tractable size."
+}

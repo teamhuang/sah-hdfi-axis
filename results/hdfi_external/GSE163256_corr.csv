@@ -1,0 +1,2 @@
+cohort,n,spearman_rho,spearman_p,drivers_used,suppressors_used,design
+GSE163256,106,0.3297125727384941,0.0005577119100254681,5,6,blood monocytes (ICH+control pooled); ALOX15 absent on this matrix

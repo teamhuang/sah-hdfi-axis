@@ -1,0 +1,30 @@
+== TASK1: REAL ATAC (GSE172116 human macrophage LPS activation) -> HMOX1 / NRF2 ==
+HMOX1: {'sym': 'HMOX1', 'chrom': '22', 'start': 35380361, 'end': 35394214, 'strand': 1, 'tss': 35380361}
+  UT: chr22 bins=439179 pos_signal=4.19e+09
+  HD: chr22 bins=317416 pos_signal=4.45e+09
+  LDHD: chr22 bins=357453 pos_signal=4.03e+09
+HMOX1 locus fraction-of-bases-covered: {'UT': 0.723, 'HD': 0.539, 'LDHD': 0.642}
+chr22 background scale (per-condition mean pos cov, discloses global depth diff): {'UT': 1.788, 'HD': 1.299, 'LDHD': 1.28}
+HMOX1 50kb MEAN enrichment-fold vs chr22 bkg: {'UT': 183.0077, 'HD': 34.2346, 'LDHD': 44.186}
+HMOX1 50kb MEDIAN enrichment-fold vs chr22 bkg: {'UT': 0.5624, 'HD': 0.3283, 'LDHD': 0.557}
+HMOX1 promoter MEAN enrichment-fold: {'UT': 359.9566, 'HD': 63.8995, 'LDHD': 78.0657}
+MW HD vs UT per-base: {'comparison': 'HD vs UT', 'unit': 'per-base normalised coverage (n=every10bp)', 'n_sites': 10000, 'mannwhitney_U': 43948792.0, 'p': 2.8177158851916033e-52, 'median_HD': 0.32831100875359315, 'median_UT': 0.5624096937419327}
+JASPAR: Nfe2l2 NFE2L2 matrix, maxPWM=19.62 hit_thr=15.70
+peak signal threshold (75th pct chr22 nonzero) = 4.023
+chr22 peaks(HD)=984 HMOX1-window=31 sampled distal bg=120
+sequences fetched usable=151/151
+NRF2 motif stats: {
+ "n_HMOX1_region_peaks": 31,
+ "n_distal_background_peaks": 120,
+ "HMOX1_mean_best_score": 6.093,
+ "background_mean_best_score": 4.187,
+ "HMOX1_ARE_hit_fraction": 0.645,
+ "background_ARE_hit_fraction": 0.367,
+ "motif_score_MW_HMOX1_vs_background_p": 0.012609878079451626,
+ "ARE_hit_Fisher_or": 3.14,
+ "ARE_hit_Fisher_p": 0.007553677233794146
+}
+wrote results/scatac_hmox1_summary.json + scatac_hmox1_peaks.csv
+H:\徐伟明论文\sah_rbc_bioinfo\scripts\42_scatac_hmox1.py:512: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  fig.tight_layout(rect=(0,0.04,1,1))
+wrote Fig32_scatac_hmox1.png/pdf

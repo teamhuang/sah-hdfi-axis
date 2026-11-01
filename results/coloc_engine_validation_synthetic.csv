@@ -1,0 +1,4 @@
+scenario,PP0,PP1,PP2,PP3,PP4,expected,verdict
+A_shared_causal,0.0,0.0,0.0,0.0,1.0,PP4>0.8,PASS
+B_distinct_causal,0.0,0.0,0.0,1.0,0.0,"PP3 high, PP4 low",PASS
+C_one_null,0.0,0.8573,0.0,0.1265,0.0162,"PP1/PP2, PP4 low",PASS

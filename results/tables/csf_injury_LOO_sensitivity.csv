@@ -1,0 +1,3 @@
+protein,rho_full,p_full,LOO_rho_min,LOO_rho_max,driven_by_single_sample
+FTH1,0.857,0.0065,0.786,0.893,False
+FTL,0.762,0.028,0.714,0.821,False

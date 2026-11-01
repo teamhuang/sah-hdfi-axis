@@ -1,0 +1,3 @@
+cohort,condition,n,HDFI_mean,HDFI_sd,MWU_p,Welch_p,Cohens_d,note
+GSE36791 (SAH anchor),SAH,43,0.05222089456881769,1.1200024156632646,0.5638125800855405,0.5773006054297762,0.15805878315133973,discovery cohort anchor; same formula/convention as 26_hdfi_centrepiece.py
+GSE36791 (SAH anchor),Control,18,-0.12474991480328747,1.1193011797031398,,,,healthy controls (blood)

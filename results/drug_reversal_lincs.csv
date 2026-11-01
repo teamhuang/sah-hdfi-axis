@@ -1,0 +1,16 @@
+compound,net_connectivity,rep,res,mimic,p_repress,p_restore,reversal_neglog10p,matched_repress,matched_restore,direction,rank
+Ro-16-6941,4,4,0,0,4.203801259229577e-07,1.0,6.376,"['ACSL4', 'FTH1', 'HMOX1', 'PTGS2']",[],reverser,1
+Splitomycin,4,3,1,0,6.678822907568233e-05,0.05098916289390748,5.468,"['FTH1', 'HMOX1', 'PTGS2']",['GPX4'],reverser,2
+Lisuride,4,3,1,0,6.678822907568233e-05,0.05139824132651206,5.464,"['FTH1', 'HMOX1', 'PTGS2']",['GPX4'],reverser,3
+Zebularine,3,4,0,1,4.066822509434808e-07,1.0,6.391,"['ACSL4', 'FTH1', 'HMOX1', 'PTGS2']",[],reverser,4
+Lobelanidine,3,3,0,0,6.203034658373249e-05,1.0,4.207,"['FTH1', 'HMOX1', 'PTGS2']",[],reverser,5
+TGX-115,3,1,2,0,0.09938846120646994,0.0006375935473416516,4.198,['HMOX1'],"['GPX4', 'SLC7A11']",reverser,6
+AM-580,3,3,0,0,6.359047029292393e-05,1.0,4.197,"['ACSL4', 'FTH1', 'HMOX1']",[],reverser,7
+L-803087,3,3,0,0,6.438018256347985e-05,1.0,4.191,"['ACSL4', 'HMOX1', 'PTGS2']",[],reverser,8
+Nabumetone,3,3,0,0,6.438018256347985e-05,1.0,4.191,"['FTH1', 'HMOX1', 'PTGS2']",[],reverser,9
+Moracizine,3,3,0,0,6.438018256347985e-05,1.0,4.191,"['FTH1', 'HMOX1', 'PTGS2']",[],reverser,10
+Etanidazole,3,3,0,0,6.438018256347985e-05,1.0,4.191,"['FTH1', 'HMOX1', 'PTGS2']",[],reverser,11
+Ethylbenzene,3,3,0,0,6.438018256347985e-05,1.0,4.191,"['ACSL4', 'FTH1', 'HMOX1']",[],reverser,12
+SGC-707,3,3,0,0,6.438018256347985e-05,1.0,4.191,"['ACSL4', 'FTH1', 'PTGS2']",[],reverser,13
+Phenprocoumon,3,3,0,0,6.438018256347985e-05,1.0,4.191,"['ACSL4', 'FTH1', 'HMOX1']",[],reverser,14
+Tocainide,3,3,0,0,6.517636267681043e-05,1.0,4.186,"['ACSL4', 'FTH1', 'HMOX1']",[],reverser,15

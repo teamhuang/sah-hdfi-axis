@@ -1,0 +1,82 @@
+{
+  "status": "executed",
+  "kind": "real_bulk_ATAC_bedgraph",
+  "dataset": "GSE172116",
+  "dataset_title": "Human monocyte-derived macrophage ATAC-seq; acute high-dose endotoxin (LPS) activation (HD) vs untreated (UT) vs endotoxin tolerance (LDHD); GRCh38 pooled bedgraph coverage.",
+  "cell_type": "monocyte-derived macrophage (myeloid)",
+  "contrast": "untreated (UT) vs acute LPS (HD) vs LPS-tolerance (LDHD)",
+  "genome_build": "GRCh38",
+  "files": {
+    "UT": "GSE172116_MDMs_UT_rep123456_RPKM_FR.bedgraph.gz",
+    "HD": "GSE172116_MDMs_HD_rep123456_RPKM_FR.bedgraph.gz",
+    "LDHD": "GSE172116_MDMs_LDHD_rep123456_RPKM_FR.bedgraph.gz"
+  },
+  "conditions_loaded": [
+    "UT",
+    "HD",
+    "LDHD"
+  ],
+  "hmoax1": {
+    "sym": "HMOX1",
+    "chrom": "22",
+    "start": 35380361,
+    "end": 35394214,
+    "strand": 1,
+    "tss": 35380361
+  },
+  "a_accessibility": {
+    "window_kb": 50,
+    "promoter_kb": 1,
+    "metric": "overlapping-bin-safe per-base MAX coverage as enrichment FOLD over each sample's own chr22 background mean positive coverage (scale-free; corrects the deposited bedgraphs' differing global depth); median reported for robustness",
+    "chr22_background_scale": {
+      "UT": 1.7884,
+      "HD": 1.2988,
+      "LDHD": 1.2803
+    },
+    "window_mean_fold_all": {
+      "UT": 183.00769,
+      "HD": 34.23462,
+      "LDHD": 44.18595
+    },
+    "window_median_fold_all": {
+      "UT": 0.56241,
+      "HD": 0.32831,
+      "LDHD": 0.55702
+    },
+    "promoter_mean_fold_all": {
+      "UT": 359.95657,
+      "HD": 63.89945,
+      "LDHD": 78.06569
+    },
+    "mannwhitney_per_base": {
+      "comparison": "HD vs UT",
+      "unit": "per-base normalised coverage (n=every10bp)",
+      "n_sites": 10000,
+      "mannwhitney_U": 43948792.0,
+      "p": 2.8177158851916033e-52,
+      "median_HD": 0.32831100875359315,
+      "median_UT": 0.5624096937419327
+    }
+  },
+  "b_nrf2_motif": {
+    "matrix": "Nfe2l2 (MA0150.3)",
+    "max_pwm": 19.624,
+    "hit_threshold": 15.699,
+    "peak_signal_threshold": 4.0234,
+    "n_HMOX1_region_peaks": 31,
+    "n_distal_background_peaks": 120,
+    "HMOX1_mean_best_score": 6.093,
+    "background_mean_best_score": 4.187,
+    "HMOX1_ARE_hit_fraction": 0.645,
+    "background_ARE_hit_fraction": 0.367,
+    "motif_score_MW_HMOX1_vs_background_p": 0.012609878079451626,
+    "ARE_hit_Fisher_or": 3.14,
+    "ARE_hit_Fisher_p": 0.007553677233794146
+  },
+  "b_honest_label": "chromVAR-style NRF2 motif-hit / best-score enrichment WITHIN real accessible peaks (single TF, real-peak sequences). It is a motif-accessibility PROXY on real peaks, NOT a full chromVAR deviation across matched-activity background peaks.",
+  "c_peak_to_gene": {
+    "nearest_peak_tss_dist_kb": 1.44,
+    "note": "linear-distance peak->TSS assignment; NOT an ATAC-RNA correlation (no matched expression)."
+  },
+  "honest_scope": "Real human macrophage (myeloid) LPS-activation ATAC reference -- NOT an SAH / heme / human-brain scATAC experiment. No openly-downloadable, tractable-size SAH/ICH/microglia scATAC peak or fragment file was found (GEO scATAC bundles login-gated / multi-GB; ENCODE has ~1 monocyte ATAC, 0 microglia ATAC). Answers 'which cell type has HMOX1 ARE-chromatin capacity under inflammatory stimulation', not 'which brain cell opens HMOX1 in SAH'."
+}

@@ -1,0 +1,21 @@
+# Raw and cached data (large; NOT redistributed — cite accessions in Data availability)
+data/
+scrna/
+_tmp_probe/
+_tmp/
+*.tar
+results/gwas/cache/
+*.h.tsv.gz
+__pycache__/
+*.pyc
+
+# Superseded manuscript builds (keep only the submission .md/.docx in the repo)
+manuscript/MANUSCRIPT_SAH_RBC_axis*.docx
+manuscript/MANUSCRIPT_SAH_RBC_axis.md
+manuscript/MANUSCRIPT_SAH_RBC_axis_docx.md
+manuscript/RESPONSE_TO_REVIEWER*.md
+
+# OS / editor
+Thumbs.db
+.DS_Store
+*.tmp

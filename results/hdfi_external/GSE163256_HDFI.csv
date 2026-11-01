@@ -1,0 +1,3 @@
+cohort,condition,n,HDFI_mean,HDFI_sd,MWU_p,Welch_p,Cohens_d,note
+GSE163256,ICH_blood_monos,101,0.5554262972154614,1.0325260642234746,0.7504147684691416,0.5322316293740204,-0.12274490904330361,"CD14+ monocytes from peripheral BLOOD, ICH patients"
+GSE163256,Control_blood_monos,5,0.6471377315654007,0.22454149375469107,,,,"CD14+ monocytes from peripheral BLOOD, healthy controls"

@@ -1,0 +1,53 @@
+{
+  "global_metrics": {
+    "NRF2_activity": {
+      "delta": 0.4493860602378845,
+      "p": 0.0
+    },
+    "BACH1_activity": {
+      "delta": 0.16653679311275482,
+      "p": 1.400980960360787e-92
+    },
+    "BACH1_expr": {
+      "delta": 0.7762835621833801,
+      "p": 0.0
+    },
+    "HMOX1": {
+      "delta": 1.0253264904022217,
+      "p": 0.0
+    },
+    "DetoxFailure": {
+      "delta": 0.18350236117839813,
+      "p": 8.212503752256548e-77
+    }
+  },
+  "microglia_expected_pattern": {
+    "NRF2_up": true,
+    "BACH1_activity_down": true,
+    "HMOX1_up": true,
+    "DetoxFailure_up": true
+  },
+  "neutrophil_pattern": {
+    "NRF2_up": true,
+    "BACH1_activity_down": false,
+    "HMOX1_up": true,
+    "DetoxFailure_up": false
+  },
+  "nrf2_targets_measured": [
+    "Hmox1",
+    "Nqo1",
+    "Gclm",
+    "Gclc",
+    "Txnrd1",
+    "Slc7a11",
+    "Ftl1",
+    "Fth1",
+    "Gsr",
+    "Pgd",
+    "Srxn1",
+    "Prdx1",
+    "Mgst3",
+    "Abcc1",
+    "Ephx1"
+  ]
+}

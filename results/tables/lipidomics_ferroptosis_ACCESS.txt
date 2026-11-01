@@ -1,0 +1,165 @@
+LIPIDOMICS / METABOLOMICS FOR THE FERROPTOSIS EXECUTION LAYER
+Reviewer-requested evidence for oxidised PUFA phospholipids (ox-PE / PE-OOH),
+arachidonic acid (AA 20:4), adrenic acid (AdA 22:4), ox-PE species in SAH.
+
+===============================================================================
+BOTTOM LINE (honest, no-fabrication)
+===============================================================================
+INDEPENDENT RE-ANALYSIS WAS **NOT POSSIBLE**. No openly downloadable, per-
+metabolite / per-lipid *quantification table* (with SAH-vs-control values)
+could be obtained from either requested source. Therefore:
+
+  * NO scripts/48_lipidomics_ferroptosis_index.py was written  (it would have
+    required fabricating / imputing numbers).
+  * NO figures/Fig38_lipidomics_ferroptosis.{png,pdf} and NO
+    results/tables/lipidomics_ferroptosis.csv were produced.
+  * What follows is the paper-reported literature evidence, clearly labelled
+    "REPORTED IN LITERATURE, NOT INDEPENDENTLY RE-ANALYSED".
+
+===============================================================================
+SOURCE 1 -- PMC10525923
+"Distinct Cerebrospinal Fluid Lipid Signature in Patients with SAH-Induced
+ Hydrocephalus" (Biomedicines 2023;11:2360; PMID 37760800; DOI 10.3390/biomedicines11092360)
+Design: untargeted LC-MS/MS ventricular/cisternal CSF lipidomics.
+Contrast: SAH post-haemorrhagic hydrocephalus (n=13) vs control unruptured-
+          aneurysm clipping (n=11). Welch t-test + Benjamini-Hochberg (FDR<0.10).
+===============================================================================
+ACCESSION FOUND:  NONE.
+  No MetaboLights (MTBLSxxxx), no Metabolomics Workbench (STxxxx / MD2xxxx),
+  no PRIDE/PXD, no GEO accession is cited anywhere in the article.
+  Data Availability (verbatim): "The dataset supporting the conclusion of this
+  article is available in the MacAulay Lab database repository,
+  https://github.com/Sorennorge/MacAulayLab-SAH-Metabolomics, accessed on 8
+  August 2023."  Scripts point to an internal `Data/*.xlsx` folder.
+
+QUANT TABLE DOWNLOADABLE?  NO -- evidence:
+  * GitHub repo (git tree via api.github.com, HTTP 200) contains ANALYSIS
+    SCRIPTS + README ONLY (26 .py/.R/.md blobs). No `Data/` folder and no
+    .xlsx/.csv abundance matrix is committed. So the per-lipid quant table the
+    scripts consume is NOT in the public repo.
+  * MDPI supplementary ZIP: direct https://www.mdpi.com/article/10.3390/
+    biomedicines11092360/s1  -> HTTP 403 (Akamai "Access Denied").
+    PMC /articles/instance/10525923/bin/...s001.zip -> HTTP 200 but returns the
+    "Preparing to download ..." JS interstitial (1.8 KB HTML), not the bytes.
+    EuropePMC REST https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10525923/
+    supplementaryFiles -> HTTP 200 application/zip, SUCCEEDED, but the ZIP
+    (nested s001.zip) contains exactly ONE file:
+    "biomedicines-2576643-supplementary.pdf" (4.82 MB, 12 pages).
+    That PDF = Supplementary Figures S1-S6 + Table S1 "Group overview" (clinical
+    metadata). It is NOT a per-lipid abundance matrix. NO machine-readable table.
+  * Metabolomics Workbench study-title search (api, HTTP 200) for
+    "SAH metabolomics" / "cerebrospinal fluid lipid" / "subarachnoid hemorrhage
+    lipid" returned 0 studies -> no matching ST deposit.
+
+RELEVANCE TO THE EXECUTION LAYER (important caveat for the reviewer):
+  This human SAH-vs-control CSF study profiles intact lipid classes; it did NOT
+  measure oxidised phosphatidylethanolamines (ox-PE / PE-OOH), free 4-HNE or
+  MDA. The closest ferroptosis-relevant hits are AA/LA-derived SUBSTRATE or
+  signalling lipids (arachidonoyl amide, PUFA-plasmalogens, PA45:4, LPC/MAG
+  18:2), i.e. substrate/precursor axis, NOT the peroxidised execution species.
+
+---------------------------------------------------------------------------
+  REPORTED IN LITERATURE, NOT INDEPENDENTLY RE-ANALYSED
+---------------------------------------------------------------------------
+  Detectables: 357 (Methods say 358) compounds; 244 classified into 17 lipid
+    groups; 14 small groups (<4 lipids) merged into a "small-group collection".
+  Overall CSF lipid abundance: SAH 18.3 +/- 3.7 vs control 15.2 +/- 2.3,
+    p = 0.49  (no global difference).
+  Seven individual lipids significantly UP in SAH after BH-FDR (p<0.10):
+    amide C18; arachidonoyl amide; PC 30:0; PC 31:0; PC 32:0 [PC(16:0/16:0)];
+    plasmenyl-PE 43:6; plasmenyl-PE 36:1 (18:0/18:1).
+    (Per-species numeric fold-change / p are shown only in the volcano Figure,
+     not printed as a downloadable table.)
+  Class-level significantly elevated in SAH: fatty acids, phosphatidic acids,
+    plasmenyl-phosphatidylethanolamines, monoglycerols.
+  High-fold cluster (>2.5 log2FC; 5-16x) elevated but NOT surviving FDR:
+    fatty acids, lysophosphatidylcholines, mono(di)acylglycerols, phosphatidic
+    acids, small-group collection.
+  Phosphatidic-acid species named as up: PA22:0, PA24:0, PA26:0, PA28:0, PA45:4.
+  Other named elevated lipids: lysophosphatidylcholine 18:2; monoacylglycerol
+    18:2 (linoleate); plasmalogen plasmenyl-PE 43:6.
+
+===============================================================================
+SOURCE 2 -- PMC13013107
+"Phenotype-Aligned Metabolomics Identifies Plasma Arginine as a Candidate
+ Predictor of DCI after aSAH" (2024/2026).
+Design: untargeted plasma metabolomics, UHPLC-Vanquish + Exploris 480 Orbitrap
+        (pos+neg). 2,022 annotated metabolites; 9,135 features.
+Contrast: DCI (n=30) vs No-DCI control (n=30), phenotype-aligned 24-48 h /
+          48-72 h pre-onset buckets. Full cohort 101 aSAH (41 DCI).
+===============================================================================
+ACCESSION FOUND:  NONE (no MTBLS / ST / PXD / GEO). Data are on FIGSHARE:
+  * Processed per-metabolite CSV  DOI 10.6084/m9.figshare.30813929
+    ("PAM_DCI_data_matrices.zip": 2,022-annotated .csv + 9,035 .csv; 5.88 MB).
+    figshare record is genuinely OPEN (is_public=true, license CC BY 4.0,
+    download_disabled=false, embargo=None).
+  * Raw instrument data           DOI 10.6084/m9.figshare.30813941
+    ("PAM_DCI_raw_data.zip", 16.27 GB -- raw mzML-style, not a quant table).
+
+QUANT TABLE DOWNLOADABLE (automated)?  NO -- evidence:
+  api.figshare.com/v2/articles/30813929  -> HTTP 200 (metadata ok; file id
+  60164216 = PAM_DCI_data_matrices.zip, download_url given).
+  Attempting the actual bytes from the ndownloader file link:
+    curl   https://ndownloader.figshare.com/files/60164216
+           -> HTTP 202, body empty, content-type text/html, 0 bytes.
+    python urllib  same URL -> HTTP 202, content-length 0, header
+           x-amzn-waf-action: challenge.
+  The 202 + "x-amzn-waf-action: challenge" is an AWS-WAF bot challenge served
+  in place of the file; it requires a browser JS solve that curl/python cannot
+  complete. Retry x3 with referer + cookie jar still returns 202/challenge.
+  The public S3 mirror path -> HTTP 404 (NoSuchKey). => The per-metabolite CSV
+  cannot be retrieved programmatically; download is effectively blocked.
+
+RELEVANCE TO THE EXECUTION LAYER (caveat):
+  Even if retrievable, the contrast is DCI-vs-No-DCI (both aSAH), NOT
+  SAH-vs-control, and the reported hits are the arginine / nitric-oxide axis
+  and amino-acid ratios -- not oxidised-PUFA phospholipids. Standard untargeted
+  plasma metabolomics does not resolve ox-PE/PE-OOH. So this source does not
+  answer the reviewer's ferroptosis-execution-lipid question even in principle.
+
+---------------------------------------------------------------------------
+  REPORTED IN LITERATURE, NOT INDEPENDENTLY RE-ANALYSED
+---------------------------------------------------------------------------
+  Arginine: 39% depleted in DCI vs No-DCI; log2FC = -0.715; q = 0.022
+    (24-48 h); p ~ 1e-5..1e-4; ranked #1 of 2,022 features; OR 0.22 (p=0.001);
+    AUC 0.808 (95% CI 0.647-0.945).
+  Citrulline: p = 0.040; log2FC = -0.38 (24-48 h).
+  Glutamine: p = 0.010 log2FC -0.35 (24-48 h); p = 0.011 log2FC -0.31 (48-72 h).
+  Glutamic acid: p = 0.142 (24-48 h); p = 0.459 (48-72 h) -- NS.
+  Ornithine: p = 0.988 (24-48 h); p = 0.725 (48-72 h) -- NS.
+  Ratios: Arg/Orn q=0.011; Arg/Cit q=0.074; Gln/Glu q=0.009 (24-48 h).
+  Unknown m/z 368.18908: q=0.0263; log2FC +1.922 (24-48 h).
+  Combined Arg + mFisher AUC 0.856 (95% CI 0.733-0.955); mFisher alone 0.718.
+
+===============================================================================
+WHERE GENUINE ox-PE / AA EXECUTION-LIPID QUANT DATA DID EXIST THIS PROJECT
+===============================================================================
+This project ALREADY contains real, openly downloadable, per-analyte
+quantification of the ferroptosis execution lipids -- from Metabolomics
+Workbench targeted assays -- analysed in scripts/44_lipidomics_ferroptosis.py
+(Fig33). Accessions there:
+  * ST003337 "Oxidized arachidonoyl-phosphatidylethanolamine" -- 5 ox-PE
+    (PE-OOH) execution species, absolute nmol/1e6 cells (valinomycin vs vehicle).
+  * ST004928 galanin/ferroptosis -- free AA FA(20:4), DHA FA(22:6),
+    AA-containing PE substrates (RSL3 ferroptosis vs control).
+Both MOUSE cell-culture models, NOT human SAH/brain. Human SAH-vs-control
+ox-PE quantification remains unavailable from PMC10525923 / PMC13013107.
+
+===============================================================================
+HTTP EVIDENCE LOG (reproduce)
+===============================================================================
+ api.github.com/repos/Sorennorge/MacAulayLab-SAH-Metabolomics/git/trees/HEAD?recursive=1  -> 200 (26 blobs, scripts only)
+ raw.githubusercontent.com/.../README.md                                                  -> 200 (points to Data/ folder not committed)
+ www.mdpi.com/article/10.3390/biomedicines11092360/s1                                     -> 403 Access Denied (Akamai)
+ pmc.ncbi.nlm.nih.gov/articles/instance/10525923/bin/biomedicines-11-02360-s001.zip       -> 200 but JS interstitial (1.8 KB HTML)
+ europepmc .../PMC10525923?supp=...                                                        -> 403
+ www.ebi.ac.uk/europepmc/webservices/rest/PMC10525923/supplementaryFiles                   -> 200 zip; inner s001.zip = 1 PDF only
+ api.figshare.com/v2/articles/30813929                                                     -> 200 metadata (public, CC BY, file id 60164216)
+ ndownloader.figshare.com/files/60164216 (curl)                                            -> 202, 0 bytes
+ ndownloader.figshare.com/files/60164216 (python urllib)                                   -> 202, 0 bytes, x-amzn-waf-action: challenge
+ figshare.com/ndownloader/files/60164216                                                   -> 403
+ s3.amazonaws.com/figshare-production-.../files/60164216                                    -> 404 NoSuchKey
+ www.metabolomicsworkbench.org/rest/study/study_title/quote/<SAH CSF terms>/list            -> 200, 0 matching studies
+
+STATUS: NOT EXECUTED / NOT ACCESSIBLE -- literature-reported-only. No dataset
+fabricated. See this file as the audit record.

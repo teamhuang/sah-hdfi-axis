@@ -1,0 +1,20 @@
+{
+  "human_cohort": "PMC10525923 (Biomedicines 2023;11:2360): human cisternal CSF, SAH n=13 vs control n=11, LC-MS/MS, 244 classified lipids.",
+  "human_fdr_significant_up_classes": 8,
+  "human_nominal_only_up_clusters": 4,
+  "human_per_sample_matrix_downloadable": false,
+  "human_provenance": "VERBATIM published differential-lipid findings; per-sample abundance NOT open (code-only repo)",
+  "execution_anchor": "Round-10 mouse ferroptosis LC-MS/MS (ST003337 valinomycin MEFs, ST004928 RSL3 MDSCs)",
+  "oxpe_n": 5,
+  "oxpe_fold_range": [
+    1.69419480226445,
+    27.82792967260768
+  ],
+  "oxpe_best_p": 1.887032749504918e-05,
+  "honest_limits": [
+    "4-HNE/MDA/GSH absent in panels and not imputed",
+    "execution numbers are mouse cell-culture, not human SAH",
+    "no within-patient HDFI <-> lipid correlation possible"
+  ],
+  "conclusion": "Ferroptosis-execution lipids are quantitatively supported by REAL public LC-MS/MS; the human SAH-CSF lipidome directionally corroborates elevated PUFA-/ether-PE species but is reported VERBATIM (its per-sample matrix is not openly downloadable). A single per-patient human ferroptosis-lipid index therefore remains an author-must-produce measurement."
+}

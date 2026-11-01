@@ -1,0 +1,10 @@
+gene,found,chrom,tss,nfe2l2_pwm_sites,nfe2l2_best,bach1_pwm_sites,bach1_best,are_consensus,mare_consensus,ens_reg_features,ens_motif_features,ens_are_type_motifs,reg_types
+HMOX1,True,22,35380361,0,8.69,0,0.0,6,0,5,13,0,"{""enhancer"": 3, ""CTCF_binding_site"": 1, ""promoter"": 1}"
+HP,True,16,72054478,0,8.11,0,0.0,2,0,0,3,0,{}
+FTH1,True,11,61967640,0,7.88,0,0.0,4,0,5,33,0,"{""promoter"": 3, ""enhancer"": 1, ""CTCF_binding_site"": 1}"
+FTL,True,19,48965275,1,19.62,0,0.0,2,0,3,28,2,"{""promoter"": 3}"
+GPX4,True,19,1103982,0,10.92,0,0.0,7,0,4,31,1,"{""CTCF_binding_site"": 2, ""enhancer"": 1, ""promoter"": 1}"
+SLC40A1,True,2,189583758,0,9.15,0,0.0,5,0,1,8,3,"{""enhancer"": 1}"
+TFRC,True,3,196082162,0,11.94,0,0.0,2,0,4,12,0,"{""enhancer"": 2, ""promoter"": 2}"
+NFE2L2,True,2,177392756,0,7.86,0,0.0,2,0,4,17,0,"{""enhancer"": 2, ""promoter"": 1, ""CTCF_binding_site"": 1}"
+BACH1,True,21,29194071,0,11.57,0,0.0,2,0,4,0,0,"{""enhancer"": 3, ""promoter"": 1}"

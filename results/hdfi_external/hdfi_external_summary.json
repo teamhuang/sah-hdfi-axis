@@ -1,0 +1,70 @@
+{
+  "one_line_conclusion": "External validation verdict: NOT CONFIRMED. HDFI was NOT elevated in ICH vs controls (GSE163256 d=-0.12, p=0.75; SAH blood anchor likewise NS, p=0.56); HDFI~Execution coupling did NOT replicate consistently: positive in ICH blood monocytes (rho=0.33) but inverse in ICH whole blood (rho=-0.36). HDFI is not yet validated as an independent case-vs-control blood biomarker; its link to ferroptosis execution appears cell-context dependent.",
+  "hdfi_formula": "HDFI = z(HMOX1) - mean(z(FTH1),z(FTL)) - z(GPX4), z-scored within each cohort",
+  "execution_formula": "mean z(ACSL4,TFRC,NCOA4,LPCAT3,PTGS2,ALOX15) - mean z(GPX4,SLC7A11,AIFM2/FSP1,GCH1,DHODH,DHRS3)",
+  "cohorts_used": [
+    {
+      "cohort": "GSE163256",
+      "design": "ICH vs healthy peripheral-blood CD14+ monocytes",
+      "n_case": 101,
+      "n_ctrl": 5,
+      "MWU_p": 0.7504147684691416,
+      "Welch_p": 0.5322316293740204,
+      "Cohens_d": -0.12274490904330361,
+      "corr_rho": 0.3297125727384941,
+      "corr_p": 0.0005577119100254681,
+      "drivers_used": [
+        "ACSL4",
+        "TFRC",
+        "NCOA4",
+        "LPCAT3",
+        "PTGS2"
+      ],
+      "suppressors_used": [
+        "GPX4",
+        "SLC7A11",
+        "AIFM2",
+        "GCH1",
+        "DHODH",
+        "DHRS3"
+      ]
+    },
+    {
+      "cohort": "GSE296792",
+      "design": "ICH whole blood (longitudinal, NO controls)",
+      "n_total": 77,
+      "corr_rho": -0.36429360113570636,
+      "corr_p": 0.0011256788362247424,
+      "case_control": "not possible (no controls) -- reported as descriptive + baseline-vs-day7 longitudinal",
+      "baseline_day7_MWU_p": 0.25357347003932806
+    }
+  ],
+  "cohorts_skipped": [
+    {
+      "cohort": "GSE166638",
+      "skip_reason": "ICH leukocyte time-course (BLD/HEF/CD4 sorted) with NO healthy controls; only per-sample FPKM in RAW.tar -- no clean whole-blood case/control matrix"
+    },
+    {
+      "cohort": "GSE285385",
+      "skip_reason": "TBI but data are sorted CD4/CD8/CD14 subsets from patients only, NO controls (Part 1)"
+    },
+    {
+      "cohort": "GSE285386",
+      "skip_reason": "TBI samples carry ambiguous -C/-I/-N per-patient fraction labels; no series_matrix and biomarker characteristics only on reCAPTCHA-blocked page -> case/control not reliably mappable"
+    },
+    {
+      "cohort": "GSE165653",
+      "skip_reason": "NOT an ischemic-stroke blood cohort (zebrafish single-cell Nodal signaling); accession mismatch"
+    },
+    {
+      "cohort": "GSE51372",
+      "skip_reason": "esummary returns unrelated pancreatic CTC study -- not a hemorrhagic/stroke blood cohort"
+    }
+  ],
+  "interpretation": {
+    "sah_anchor": "SAH GSE36791 HDFI is the reused discovery anchor (same convention as 26_hdfi_centrepiece.py).",
+    "gse163256": "GSE163256 (independent human ICH blood monocytes, 101 ICH vs 5 control): HDFI showed lower HDFI in ICH than controls (Cohen d=-0.12, Mann-Whitney p=0.75 -> NOT significant); within-cohort Spearman(HDFI, ferroptosis Execution) rho=0.33, p=0.000558 -> significant positively.",
+    "gse296792": "GSE296792 (independent human ICH whole-blood RNA-seq, 77 samples, longitudinal, NO healthy controls so a case/control HDFI elevation CANNOT be tested): within-cohort Spearman(HDFI, ferroptosis Execution) rho=-0.36, p=0.00113 -> significant."
+  },
+  "guardrail": "Findings are reported as observed; no framing was tuned to obtain significance. HDFI is z-scored WITHIN each cohort, so absolute HDFI is not directly comparable across cohorts -- only within-cohort case/control contrasts and within-cohort HDFI~Execution correlations are legitimate."
+}

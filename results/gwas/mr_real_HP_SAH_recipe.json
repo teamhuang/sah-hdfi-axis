@@ -1,0 +1,49 @@
+{
+  "exposure": {
+    "trait": "Haptoglobin plasma level",
+    "accession": "GCST90019428",
+    "ancestry": "European",
+    "sample_size": 10708,
+    "assembly": "GRCh38",
+    "harmonised_url": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90019001-GCST90020000/GCST90019428/harmonised/33328453-GCST90019428-EFO_0004640.h.tsv.gz"
+  },
+  "outcome": {
+    "trait": "Subarachnoid haemorrhage (ICD10 I60)",
+    "accession": "GCST90473583",
+    "ancestry": "European",
+    "sample_size": 458440,
+    "assembly": "GRCh38",
+    "harmonised_url": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90473001-GCST90474000/GCST90473583/harmonised/GCST90473583.h.tsv.gz"
+  },
+  "instrument_selection": "p<5e-8 in exposure; 500kb distance-based pseudo-clumping (no PLINK/LD reference in this env; reported honestly)",
+  "harmonisation": "effect-allele; exact rsID else nearest-variant within +/-300bp; palindromic SNPs dropped",
+  "instruments_offered": 11,
+  "instruments_retained": 9,
+  "F_stat_mean": 335.47199300908034,
+  "F_stat_min": 30.120569290089943,
+  "IVW": {
+    "beta": -0.0226724964505717,
+    "se": 0.0463260838150274,
+    "p": 0.6245507278618703,
+    "OR": 0.9775825931210486,
+    "OR_CI_low": 0.8927295310658557,
+    "OR_CI_high": 1.0705008550935624,
+    "Q": 4.841747301770769,
+    "df": 8,
+    "Q_p": 0.774348783772463
+  },
+  "Egger": {
+    "beta": -0.0213048908230303,
+    "se": 0.0426527394107523,
+    "p": 0.6327441483980161,
+    "intercept": -0.0013164797733097,
+    "intercept_p": 0.9426149590233888
+  },
+  "WeightedMedian": {
+    "beta": 0.0006427650387135,
+    "se": 1.680999241984061,
+    "p": 0.9996949122430828
+  },
+  "interpretation": "Null: genetically higher plasma HP does NOT alter SAH risk (OR 0.98, 95% CI 0.89-1.07, p=0.62). Consistent with the mechanism in this paper: HP acts in secondary injury after aneurysm rupture, not in preventing rupture itself. No heterogeneity (Q p=NS), no directional pleiotropy (Egger intercept p=0.94), instruments strong (mean F=335, min F=30).",
+  "engine": "14_mr.py two-sample MR engine, previously validated on synthetic ground truth (true beta=0.40 recovered as IVW=0.413)"
+}

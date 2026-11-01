@@ -1,0 +1,52 @@
+section,celltype,condition,n_cells,Hmox1_mean_logCPM,Hmox1_pct_detected,Fth1_mean_logCPM,Fth1_pct_detected,Ftl1_mean_logCPM,Ftl1_pct_detected,Gpx4_mean_logCPM,Gpx4_pct_detected,Acsl4_mean_logCPM,Acsl4_pct_detected,Hp_mean_logCPM,Hp_pct_detected,Cd163_mean_logCPM,Cd163_pct_detected,Tfrc_mean_logCPM,Tfrc_pct_detected,Slc40a1_mean_logCPM,Slc40a1_pct_detected,HDFI_mouse_median,HDFI_mouse_mean,kruskal_p_celllevel,med_Sham,med_SAH24,med_SAH72,n_Sham,n_SAH24,n_SAH72,notes,mannwhitney_p_celllevel,median_diff,boot95_lo,boot95_hi,gene,measured_in_feature_space,mean_pct_detected_across_used_cells
+gene_mean_logexpr,Myeloid(microglia/macrophage),Sham,1082.0,1.0354,19.69,7.8386,98.71,7.7326,97.78,4.4653,75.14,1.7528,33.73,0.0085,0.18,0.0638,1.11,0.4224,8.41,2.5099,46.3,-0.7726,-0.3426,,,,,,,,,,,,,,,
+gene_mean_logexpr,Myeloid(microglia/macrophage),SAH24,1148.0,3.2469,63.76,8.0599,99.83,7.6676,99.74,3.8635,76.39,2.8358,59.06,0.2394,5.57,0.0418,0.78,1.2655,28.22,1.5547,33.97,0.3858,0.4783,,,,,,,,,,,,,,,
+gene_mean_logexpr,Myeloid(microglia/macrophage),SAH72,3818.0,4.0302,70.17,8.4037,99.87,8.116,99.87,4.3038,80.88,2.5188,52.96,0.1021,2.23,0.0404,0.81,0.2899,7.05,2.6602,54.37,-0.0398,0.107,,,,,,,,,,,,,,,
+gene_mean_logexpr,Neutrophil,Sham,187.0,0.1157,2.14,8.2146,95.19,4.9727,66.31,3.6571,51.34,0.3592,6.95,0.1205,1.6,0.1003,1.6,0.4223,7.49,0.2109,3.21,0.286,0.602,,,,,,,,,,,,,,,
+gene_mean_logexpr,Neutrophil,SAH24,1831.0,4.8603,78.32,9.4436,99.07,8.2908,97.43,4.1163,74.93,2.3879,50.79,4.0009,65.37,0.2216,4.7,0.9803,24.03,1.5643,34.74,-0.6522,-0.4139,,,,,,,,,,,,,,,
+gene_mean_logexpr,Neutrophil,SAH72,301.0,4.6261,74.75,9.2572,99.67,8.605,99.0,4.4491,76.74,1.7743,36.88,2.8652,49.83,0.139,2.66,0.2959,6.98,1.7885,36.21,-0.7257,-0.6168,,,,,,,,,,,,,,,
+gene_mean_logexpr,T cell,Sham,70.0,0.5333,10.0,7.3349,92.86,6.725,88.57,3.889,64.29,1.1177,22.86,0.0,0.0,0.0883,1.43,0.3886,7.14,1.6761,28.57,-0.4625,0.5424,,,,,,,,,,,,,,,
+gene_mean_logexpr,T cell,SAH24,200.0,5.4398,88.0,9.3372,100.0,8.4397,99.0,4.8868,90.5,3.4211,74.0,2.8556,54.5,0.2136,6.0,1.1901,31.5,1.3831,35.5,-0.6042,-0.5054,,,,,,,,,,,,,,,
+gene_mean_logexpr,T cell,SAH72,251.0,5.0022,81.27,8.9626,100.0,8.4419,98.41,4.4323,82.07,2.6831,57.77,0.3671,7.57,0.1929,3.59,0.5112,12.75,1.6891,36.65,-0.2623,-0.1909,,,,,,,,,,,,,,,
+gene_mean_logexpr,B cell,Sham,75.0,0.8683,16.0,8.1009,98.67,7.0045,89.33,4.7133,74.67,1.3349,25.33,0.0565,1.33,0.4729,8.0,0.4175,8.0,1.9653,34.67,-0.4924,-0.3702,,,,,,,,,,,,,,,
+gene_mean_logexpr,B cell,SAH24,463.0,5.2449,86.83,9.0245,99.35,8.3318,99.35,4.7487,88.34,3.4469,72.35,2.5716,49.24,1.081,18.79,1.141,29.37,1.1107,27.43,-0.4459,-0.2313,,,,,,,,,,,,,,,
+gene_mean_logexpr,B cell,SAH72,640.0,5.1757,83.75,9.0971,100.0,8.6845,99.84,4.7446,85.94,2.3885,50.16,0.8455,16.88,0.6241,10.94,0.4719,11.41,1.6274,32.5,-0.7048,-0.4636,,,,,,,,,,,,,,,
+gene_mean_logexpr,NK,Sham,2424.0,0.1675,3.18,8.346,97.65,5.0889,69.51,3.9367,55.94,0.3418,6.48,0.0226,0.41,0.0265,0.41,0.6926,12.42,0.4195,6.85,0.1608,0.36,,,,,,,,,,,,,,,
+gene_mean_logexpr,NK,SAH24,214.0,3.5308,57.48,8.6572,96.73,7.3412,90.19,3.5728,64.49,2.2964,45.79,1.2643,25.23,0.3231,7.01,0.8401,23.83,0.8351,21.5,-0.3061,0.375,,,,,,,,,,,,,,,
+gene_mean_logexpr,NK,SAH72,396.0,4.1095,67.42,8.9044,99.24,8.2215,97.73,4.4868,78.79,1.6968,35.35,0.4944,9.6,0.1818,3.54,0.3144,7.07,1.2723,26.52,-0.5424,-0.364,,,,,,,,,,,,,,,
+gene_mean_logexpr,Dendritic,Sham,374.0,0.3349,6.15,8.1663,95.99,5.7418,74.6,3.4316,49.73,0.4432,7.75,0.0777,1.34,0.125,1.87,0.5049,8.56,0.7283,12.03,0.1244,0.4575,,,,,,,,,,,,,,,
+gene_mean_logexpr,Dendritic,SAH24,529.0,4.3018,77.88,8.6885,98.49,8.0048,97.92,4.2231,80.34,3.2155,68.62,1.3834,27.98,0.2214,4.73,1.135,28.54,1.0531,25.71,-0.204,0.0606,,,,,,,,,,,,,,,
+gene_mean_logexpr,Dendritic,SAH72,997.0,4.366,74.72,8.8293,98.7,8.2105,96.89,4.5086,82.75,2.3763,50.55,0.5874,11.53,0.1734,3.31,0.3738,9.03,1.462,30.99,-0.5532,-0.2262,,,,,,,,,,,,,,,
+HDFI_KW_test,Myeloid(microglia/macrophage),all,6048.0,,,,,,,,,,,,,,,,,,,,,5.764406006751718e-56,-0.7726166838153568,0.38580088007483826,-0.03976326733463709,1082.0,1148.0,3818.0,CELL-LEVEL p = pseudo-replicated; descriptive only,,,,,,,
+HDFI_pairwise,Myeloid(microglia/macrophage),Sham_vs_SAH24,2230.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,0.0,1.1584,0.9826,1.3259,,,
+HDFI_pairwise,Myeloid(microglia/macrophage),Sham_vs_SAH72,4900.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,0.0,0.7329,0.5976,0.8881,,,
+HDFI_pairwise,Myeloid(microglia/macrophage),SAH24_vs_SAH72,4966.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,0.0,-0.4256,-0.5188,-0.3186,,,
+HDFI_KW_test,Neutrophil,all,2319.0,,,,,,,,,,,,,,,,,,,,,1.4168388276056259e-06,0.28601481620302227,-0.6522035239085451,-0.725705924153752,187.0,1831.0,301.0,CELL-LEVEL p = pseudo-replicated; descriptive only,,,,,,,
+HDFI_pairwise,Neutrophil,Sham_vs_SAH24,2018.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,1e-06,-0.9382,-1.2102,-0.6086,,,
+HDFI_pairwise,Neutrophil,Sham_vs_SAH72,488.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,1e-06,-1.0117,-1.3209,-0.6595,,,
+HDFI_pairwise,Neutrophil,SAH24_vs_SAH72,2132.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,0.188049,-0.0735,-0.1988,0.0919,,,
+HDFI_KW_test,T cell,all,521.0,,,,,,,,,,,,,,,,,,,,,0.026610287358631884,-0.46250719003945806,-0.6042172308099374,-0.2622729692805985,70.0,200.0,251.0,CELL-LEVEL p = pseudo-replicated; descriptive only,,,,,,,
+HDFI_pairwise,T cell,Sham_vs_SAH24,270.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,0.043258,-0.1417,-0.7723,0.26,,,
+HDFI_pairwise,T cell,Sham_vs_SAH72,321.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,0.397869,0.2002,-0.4793,0.5787,,,
+HDFI_pairwise,T cell,SAH24_vs_SAH72,451.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,0.01948,0.3419,0.0679,0.587,,,
+HDFI_KW_test,B cell,all,1178.0,,,,,,,,,,,,,,,,,,,,,0.008038707550387873,-0.4923530688837963,-0.4458667634935698,-0.7047718149621418,75.0,463.0,640.0,CELL-LEVEL p = pseudo-replicated; descriptive only,,,,,,,
+HDFI_pairwise,B cell,Sham_vs_SAH24,538.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,0.278649,0.0465,-0.4343,0.6842,,,
+HDFI_pairwise,B cell,Sham_vs_SAH72,715.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,0.99505,-0.2124,-0.698,0.4828,,,
+HDFI_pairwise,B cell,SAH24_vs_SAH72,1103.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,0.001764,-0.2589,-0.3648,-0.1367,,,
+HDFI_KW_test,NK,all,3034.0,,,,,,,,,,,,,,,,,,,,,2.3790131825193847e-06,0.1608291073216188,-0.3061171810714578,-0.5424472286484754,2424.0,214.0,396.0,CELL-LEVEL p = pseudo-replicated; descriptive only,,,,,,,
+HDFI_pairwise,NK,Sham_vs_SAH24,2638.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,0.597236,-0.4669,-0.7065,-0.11,,,
+HDFI_pairwise,NK,Sham_vs_SAH72,2820.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,0.0,-0.7033,-0.9203,-0.4897,,,
+HDFI_pairwise,NK,SAH24_vs_SAH72,610.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,0.007971,-0.2363,-0.6386,0.0808,,,
+HDFI_KW_test,Dendritic,all,1900.0,,,,,,,,,,,,,,,,,,,,,2.143605598330072e-08,0.1244324804226149,-0.20403516788965237,-0.5532205439210963,374.0,529.0,997.0,CELL-LEVEL p = pseudo-replicated; descriptive only,,,,,,,
+HDFI_pairwise,Dendritic,Sham_vs_SAH24,903.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,0.029443,-0.3285,-0.5891,-0.1273,,,
+HDFI_pairwise,Dendritic,Sham_vs_SAH72,1371.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,1e-06,-0.6777,-0.9231,-0.4633,,,
+HDFI_pairwise,Dendritic,SAH24_vs_SAH72,1526.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,CELL-LEVEL p = pseudo-replicated; CI = bootstrap of median diff,7e-06,-0.3492,-0.4819,-0.2007,,,
+gene_detection,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Hmox1,True,55.14
+gene_detection,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Fth1,True,98.933
+gene_detection,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Ftl1,True,92.82
+gene_detection,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Gpx4,True,74.44
+gene_detection,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Acsl4,True,42.627
+gene_detection,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Hp,True,15.573
+gene_detection,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Cd163,True,2.92
+gene_detection,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Tfrc,True,14.18
+gene_detection,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,Slc40a1,True,33.793

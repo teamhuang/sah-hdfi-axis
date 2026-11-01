@@ -1,0 +1,5 @@
+cohort,condition,n,HDFI_mean,HDFI_sd,MWU_p,Welch_p,Cohens_d,note
+GSE296792,ICH_blood_all,77,-1.0136192030019286e-15,1.150865488517383,,,,case-only longitudinal ICH whole-blood; NO healthy controls -> no cross-disease case/control inference
+GSE296792,ICH_baseline(<24h),27,0.19716440224244997,1.2147827424978574,0.25357347003932806,0.33035458577223376,0.27695802560104954,longitudinal baseline-vs-day7 contrast; within-patient Wilcoxon p=0.178
+GSE296792,ICH_72h,26,-0.05553360879424342,0.8311117989345171,,,,timepoint descriptive
+GSE296792,ICH_day7,24,-0.16164854299566236,1.3715691848916751,,,,timepoint descriptive (recovery)

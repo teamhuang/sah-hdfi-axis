@@ -1,0 +1,545 @@
+{
+  "title": "pQTL-MR toward SAH secondary-injury / severity / outcome endpoints",
+  "reviewer_request": "Round 10: protein (HP/HMOX1/Ferritin/TFRC) -> secondary-injury / severity / functional-outcome MR, not SAH incidence.",
+  "engine_ready": "scripts/14_mr.py run_mr (IVW/Egger/weighted-median/Cochran Q), same as 31/34",
+  "status": "not-executed (data-blocked)",
+  "searched_terms": [
+    "stroke severity",
+    "NIHSS",
+    "National Institutes of Health Stroke Scale",
+    "modified Rankin scale",
+    "modified Rankin score",
+    "functional outcome after stroke",
+    "poor outcome after stroke",
+    "delayed cerebral ischemia",
+    "cerebral vasospasm",
+    "vasospasm",
+    "secondary brain injury",
+    "early brain injury",
+    "hemorrhage volume",
+    "haematoma volume",
+    "hematoma expansion",
+    "intraventricular hemorrhage",
+    "hydrocephalus",
+    "poor outcome after subarachnoid hemorrhage",
+    "subarachnoid hemorrhage severity",
+    "ischemic stroke severity",
+    "stroke outcome",
+    "clinical outcome",
+    "subarachnoid hemorrhage",
+    "intracerebral hemorrhage"
+  ],
+  "total_efo_matched_studies": 74,
+  "severity_outcome_candidates": [
+    {
+      "term": "stroke outcome",
+      "accession": "GCST90239734",
+      "reported_trait": "Early neurological instability after acute ischemic stroke",
+      "ancestry": [
+        "5063 European"
+      ],
+      "samples": [
+        "5,063 European ancestry individuals"
+      ],
+      "api_summary_statistics": "NA",
+      "ftp_harmonised_file_present": false,
+      "ftp_status": "404",
+      "ftp_url_checked": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90239001-GCST90240000/GCST90239734/harmonised/GCST90239734.h.tsv.gz",
+      "trait_class": "severity/outcome"
+    },
+    {
+      "term": "stroke outcome",
+      "accession": "GCST90239735",
+      "reported_trait": "Early neurological instability after acute ischemic stroke",
+      "ancestry": [
+        "324 African American or Afro-Caribbean"
+      ],
+      "samples": [],
+      "api_summary_statistics": "NA",
+      "ftp_harmonised_file_present": false,
+      "ftp_status": "404",
+      "ftp_url_checked": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90239001-GCST90240000/GCST90239735/harmonised/GCST90239735.h.tsv.gz",
+      "trait_class": "severity/outcome"
+    },
+    {
+      "term": "stroke outcome",
+      "accession": "GCST90239736",
+      "reported_trait": "Early neurological instability after acute ischemic stroke",
+      "ancestry": [
+        "204 Hispanic or Latin American"
+      ],
+      "samples": [],
+      "api_summary_statistics": "NA",
+      "ftp_harmonised_file_present": false,
+      "ftp_status": "404",
+      "ftp_url_checked": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90239001-GCST90240000/GCST90239736/harmonised/GCST90239736.h.tsv.gz",
+      "trait_class": "severity/outcome"
+    },
+    {
+      "term": "stroke outcome",
+      "accession": "GCST90239737",
+      "reported_trait": "Early neurological instability after acute ischemic stroke",
+      "ancestry": [
+        "285 East Asian"
+      ],
+      "samples": [],
+      "api_summary_statistics": "NA",
+      "ftp_harmonised_file_present": false,
+      "ftp_status": "404",
+      "ftp_url_checked": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90239001-GCST90240000/GCST90239737/harmonised/GCST90239737.h.tsv.gz",
+      "trait_class": "severity/outcome"
+    },
+    {
+      "term": "stroke outcome",
+      "accession": "GCST007672",
+      "reported_trait": "3-month functional outcome in ischaemic stroke (modified Rankin score)",
+      "ancestry": [
+        "4452 European, NR"
+      ],
+      "samples": [
+        "1,832 European and unknown ancestry modified Rankin score 0-1 cases",
+        "2,620 European and unknown ancestry modified Rankin score 2-6 cases"
+      ],
+      "api_summary_statistics": "NA",
+      "ftp_harmonised_file_present": false,
+      "ftp_status": "404",
+      "ftp_url_checked": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST00007001-GCST00008000/GCST007672/harmonised/GCST007672.h.tsv.gz",
+      "trait_class": "severity/outcome"
+    },
+    {
+      "term": "stroke outcome",
+      "accession": "GCST007673",
+      "reported_trait": "3-month functional outcome in ischaemic stroke (modified Rankin score)",
+      "ancestry": [
+        "6165 European, NR"
+      ],
+      "samples": [
+        "6,165 European and unknown ancestry individuals"
+      ],
+      "api_summary_statistics": "NA",
+      "ftp_harmonised_file_present": false,
+      "ftp_status": "404",
+      "ftp_url_checked": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST00007001-GCST00008000/GCST007673/harmonised/GCST007673.h.tsv.gz",
+      "trait_class": "severity/outcome"
+    },
+    {
+      "term": "stroke outcome",
+      "accession": "GCST007674",
+      "reported_trait": "3-month functional outcome in lacunar ischaemic stroke (modified Rankin score)",
+      "ancestry": [
+        "992 European, NR"
+      ],
+      "samples": [],
+      "api_summary_statistics": "NA",
+      "ftp_harmonised_file_present": false,
+      "ftp_status": "404",
+      "ftp_url_checked": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST00007001-GCST00008000/GCST007674/harmonised/GCST007674.h.tsv.gz",
+      "trait_class": "severity/outcome"
+    },
+    {
+      "term": "stroke outcome",
+      "accession": "GCST007675",
+      "reported_trait": "3-month functional outcome in non-lacunar ischaemic stroke (modified Rankin score)",
+      "ancestry": [
+        "3991 European, NR"
+      ],
+      "samples": [
+        "3,991 European and unknown ancestry individuals"
+      ],
+      "api_summary_statistics": "NA",
+      "ftp_harmonised_file_present": false,
+      "ftp_status": "404",
+      "ftp_url_checked": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST00007001-GCST00008000/GCST007675/harmonised/GCST007675.h.tsv.gz",
+      "trait_class": "severity/outcome"
+    },
+    {
+      "term": "stroke outcome",
+      "accession": "GCST007676",
+      "reported_trait": "3-month functional outcome in ischaemic stroke (modified Rankin score)",
+      "ancestry": [
+        "6165 European, NR"
+      ],
+      "samples": [
+        "3,830 European and unknown ancestry modified Rankin score 0-2 cases",
+        "2,335 European and unknown ancestry modified Rankin score 3-6 cases"
+      ],
+      "api_summary_statistics": "NA",
+      "ftp_harmonised_file_present": false,
+      "ftp_status": "404",
+      "ftp_url_checked": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST00007001-GCST00008000/GCST007676/harmonised/GCST007676.h.tsv.gz",
+      "trait_class": "severity/outcome"
+    },
+    {
+      "term": "stroke outcome",
+      "accession": "GCST006935",
+      "reported_trait": "3-month functional outcome in ischaemic stroke (modified Rankin score)",
+      "ancestry": [
+        "1225 European"
+      ],
+      "samples": [
+        "1,225 European ancestry individuals"
+      ],
+      "api_summary_statistics": "NA",
+      "ftp_harmonised_file_present": false,
+      "ftp_status": "404",
+      "ftp_url_checked": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST00006001-GCST00007000/GCST006935/harmonised/GCST006935.h.tsv.gz",
+      "trait_class": "severity/outcome"
+    },
+    {
+      "term": "intracerebral hemorrhage",
+      "accession": "GCST006139",
+      "reported_trait": "Hematoma volume in lobar spontaneous intracerebral hemorrhage",
+      "ancestry": [
+        "228 European"
+      ],
+      "samples": [],
+      "api_summary_statistics": "NA",
+      "ftp_harmonised_file_present": false,
+      "ftp_status": "404",
+      "ftp_url_checked": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST00006001-GCST00007000/GCST006139/harmonised/GCST006139.h.tsv.gz",
+      "trait_class": "severity/outcome"
+    },
+    {
+      "term": "intracerebral hemorrhage",
+      "accession": "GCST006140",
+      "reported_trait": "Hematoma volume in non-lobar spontaneous intracerebral hemorrhage",
+      "ancestry": [
+        "166 European"
+      ],
+      "samples": [],
+      "api_summary_statistics": "NA",
+      "ftp_harmonised_file_present": false,
+      "ftp_status": "404",
+      "ftp_url_checked": "https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST00006001-GCST00007000/GCST006140/harmonised/GCST006140.h.tsv.gz",
+      "trait_class": "severity/outcome"
+    }
+  ],
+  "severity_with_downloadable_sumstats": [],
+  "excluded_incidence_gwas": [
+    {
+      "accession": "GCST90018703",
+      "reported_trait": "Subarachnoid hemorrhage",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90018923",
+      "reported_trait": "Subarachnoid hemorrhage",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90651609",
+      "reported_trait": "Subarachnoid hemorrhage (PheCode 430.1)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90651888",
+      "reported_trait": "Subarachnoid hemorrhage (injury) (PheCode 818.2)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90246095",
+      "reported_trait": "ICD10 I60: Nontraumatic subarachnoid hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90436135",
+      "reported_trait": "Subarachnoid hemorrhage (PheCode 430.1)",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90080028",
+      "reported_trait": "ICD10 I60.9: Nontraumatic subarachnoid hemorrhage, unspecified",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90137423",
+      "reported_trait": "Subarachnoid hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90137436",
+      "reported_trait": "Subarachnoid hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90137439",
+      "reported_trait": "Subarachnoid hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90080029",
+      "reported_trait": "ICD10 I60: Nontraumatic subarachnoid hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90084015",
+      "reported_trait": "ICD10 I60: Nontraumatic subarachnoid hemorrhage (Gene-based burden)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90084014",
+      "reported_trait": "ICD10 I60.9: Nontraumatic subarachnoid hemorrhage, unspecified (Gene-based burden)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90043993",
+      "reported_trait": "Subarachnoid hemorrhage (PheCode 430.1)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90477976",
+      "reported_trait": "Subarachnoid hemorrhage (PheCode 430.1)",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90480187",
+      "reported_trait": "Subarachnoid hemorrhage (PheCode 430.1)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90482520",
+      "reported_trait": "Subarachnoid hemorrhage (injury)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90482015",
+      "reported_trait": "Subarachnoid hemorrhage (PheCode 430.1)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90473583",
+      "reported_trait": "ICD10 I60: Subarachnoid haemorrhage",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST002389",
+      "reported_trait": "Intracerebral hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90080030",
+      "reported_trait": "ICD10 I61.9: Nontraumatic intracerebral hemorrhage, unspecified",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90080031",
+      "reported_trait": "ICD10 I61: Nontraumatic intracerebral hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90018650",
+      "reported_trait": "Intracerebral hemorrhage",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90018870",
+      "reported_trait": "Intracerebral hemorrhage",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST008873",
+      "reported_trait": "Non-lobar intracerebral hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST008874",
+      "reported_trait": "Lobar intracerebral hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST008875",
+      "reported_trait": "Intracerebral hemorrhage (MTAG)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST008876",
+      "reported_trait": "Non-lobar intracerebral hemorrhage (MTAG)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST008877",
+      "reported_trait": "Lobar intracerebral hemorrhage (MTAG)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST008878",
+      "reported_trait": "Intracerebral hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90246096",
+      "reported_trait": "ICD10 I61: Nontraumatic intracerebral hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90854300",
+      "reported_trait": "Intracerebral hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90432122",
+      "reported_trait": "Intracerebral hemorrhage stroke",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90432126",
+      "reported_trait": "Subcortical intracerebral hemorrhage",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90436136",
+      "reported_trait": "Intracerebral hemorrhage (PheCode 430.2)",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90137422",
+      "reported_trait": "Intracerebral hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90137435",
+      "reported_trait": "Intracerebral hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90137438",
+      "reported_trait": "Intracerebral hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90084017",
+      "reported_trait": "ICD10 I61: Nontraumatic intracerebral hemorrhage (Gene-based burden)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90084016",
+      "reported_trait": "ICD10 I61.9: Nontraumatic intracerebral hemorrhage, unspecified (Gene-based burden)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90043994",
+      "reported_trait": "Intracerebral hemorrhage (PheCode 430.2)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST010837",
+      "reported_trait": "Intracerebral hemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90651323",
+      "reported_trait": "Intracerebral hemorrhage (PheCode 430.2)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90726935",
+      "reported_trait": "Intracerebral haemorrhage",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90726915",
+      "reported_trait": "ICD10 I61: Intracerebral haemorrhage",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90832958",
+      "reported_trait": "ICD10 I61: Intracerebral haemorrhage",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90477977",
+      "reported_trait": "Intracerebral hemorrhage (PheCode 430.2)",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90477978",
+      "reported_trait": "Intracerebral hemorrhage (PheCode 430.2)",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90480188",
+      "reported_trait": "Intracerebral hemorrhage (PheCode 430.2)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90473584",
+      "reported_trait": "ICD10 I61: Intracerebral haemorrhage",
+      "ftp_present": true
+    }
+  ],
+  "excluded_generic_non_saha": [
+    {
+      "accession": "GCST000125",
+      "reported_trait": "Coronary spasm",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90651566",
+      "reported_trait": "Hydrocephalus (PheCode 331.1)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90565137",
+      "reported_trait": "Normal pressure hydrocephalus",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90435903",
+      "reported_trait": "Hydrocephalus (PheCode 331.1)",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90083842",
+      "reported_trait": "ICD10 G91: Hydrocephalus (Gene-based burden)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90079856",
+      "reported_trait": "ICD10 G91: Hydrocephalus",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90043733",
+      "reported_trait": "Hydrocephalus (PheCode 331.1)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90477507",
+      "reported_trait": "Hydrocephalus (PheCode 331.1)",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90481861",
+      "reported_trait": "Hydrocephalus (PheCode 331.1)",
+      "ftp_present": false
+    },
+    {
+      "accession": "GCST90480006",
+      "reported_trait": "Hydrocephalus (PheCode 331.1)",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST90473368",
+      "reported_trait": "ICD10 G91: Hydrocephalus",
+      "ftp_present": true
+    },
+    {
+      "accession": "GCST005426",
+      "reported_trait": "Intracranial haemorrhage in renal transplantation (donors)",
+      "ftp_present": false
+    }
+  ],
+  "endpoints_searched_and_blocked": [
+    "stroke severity / NIHSS",
+    "modified Rankin scale / 3-month functional outcome after stroke",
+    "delayed cerebral ischemia (DCI)",
+    "cerebral vasospasm",
+    "poor outcome / secondary injury after subarachnoid hemorrhage",
+    "hematoma / hemorrhage volume (ICH expansion)",
+    "intraventricular hemorrhage / early hydrocephalus"
+  ],
+  "classification_note": "Incidence/rupture GWAS (SAH I60 / ICH I61 / PheCode 430.x) and all-cause hydrocephalus GWAS DO have downloadable sumstats, but they are NOT SAH secondary-injury endpoints (wrong estimand) and were deliberately EXCLUDED from the severity MR rather than relabelled.",
+  "conclusion": "No SAH-specific severity / secondary-injury / functional-outcome GWAS (NIHSS, modified Rankin, delayed cerebral ischemia, vasospasm, hematoma volume, poor outcome after SAH) with downloadable harmonised sumstats exists on the GWAS Catalog FTP -- all such Catalog entries report summaryStatistics=NA / 404. The reviewer's 'protein -> secondary-injury MR' is therefore a data-blocked analysis awaiting a matched SAH severity GWAS.",
+  "incidence_caveat": "SAH GCST90473583 / ICH GCST90473584 (cached on disk, downloadable) are INCIDENCE / rupture endpoints (ICD10 case vs control). They measure whether the vessel ruptures, NOT the post-rupture secondary-injury / severity / functional-outcome phenotype the reviewer asked for. Relabelling them as 'secondary injury' would be an estimand error; they are reported only to document that a downloadable endpoint of the WRONG estimand exists.",
+  "ischemic_proxy_note": "The closest severity/outcome GWAS in the Catalog are 3-month functional outcome (modified Rankin score) after ISCHAEMIC stroke (GCST007672 / GCST007676) and hematoma volume after ICH (GCST006139 / GCST006140). All report summaryStatistics=NA and the harmonised FTP file 404s, so even these non-SAHA proxies cannot be executed. If ever available they would be a PROXY estimand (wrong vascular territory for SAH) and must not be described as SAH secondary injury."
+}

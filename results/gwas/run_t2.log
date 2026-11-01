@@ -1,0 +1,83 @@
+== TASK2: pQTL-MR toward secondary-injury / severity / outcome endpoints ==
+searched 24 endpoint terms; 74 EFO-matched studies total
+severity/outcome candidates=12 | of those with downloadable sumstats=0
+(excluded) incidence/rupture GWAS=50 | generic non-SAHA GWAS=12
+wrote H:\徐伟明论文\sah_rbc_bioinfo\results\mr_secondary_injury.csv
+wrote H:\徐伟明论文\sah_rbc_bioinfo\results\mr_secondary_injury_summary.json
+no executed severity pairs -> Fig31 intentionally NOT produced (integrity rule).
+
+== SUMMARY ==
+  GCST000125   | sumstats=NA                     | ftp_present=False | Coronary spasm
+  GCST90651566 | sumstats=NA                     | ftp_present=False | Hydrocephalus (PheCode 331.1)
+  GCST90565137 | sumstats=NA                     | ftp_present=False | Normal pressure hydrocephalus
+  GCST90435903 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Hydrocephalus (PheCode 331.1)
+  GCST90083842 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | ICD10 G91: Hydrocephalus (Gene-based burden)
+  GCST90079856 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | ICD10 G91: Hydrocephalus
+  GCST90043733 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | Hydrocephalus (PheCode 331.1)
+  GCST90477507 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Hydrocephalus (PheCode 331.1)
+  GCST90481861 | sumstats=NA                     | ftp_present=False | Hydrocephalus (PheCode 331.1)
+  GCST90480006 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Hydrocephalus (PheCode 331.1)
+  GCST90473368 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | ICD10 G91: Hydrocephalus
+  GCST90239734 | sumstats=NA                     | ftp_present=False | Early neurological instability after acute is
+  GCST90239735 | sumstats=NA                     | ftp_present=False | Early neurological instability after acute is
+  GCST90239736 | sumstats=NA                     | ftp_present=False | Early neurological instability after acute is
+  GCST90239737 | sumstats=NA                     | ftp_present=False | Early neurological instability after acute is
+  GCST007672   | sumstats=NA                     | ftp_present=False | 3-month functional outcome in ischaemic strok
+  GCST007673   | sumstats=NA                     | ftp_present=False | 3-month functional outcome in ischaemic strok
+  GCST007674   | sumstats=NA                     | ftp_present=False | 3-month functional outcome in lacunar ischaem
+  GCST007675   | sumstats=NA                     | ftp_present=False | 3-month functional outcome in non-lacunar isc
+  GCST007676   | sumstats=NA                     | ftp_present=False | 3-month functional outcome in ischaemic strok
+  GCST006935   | sumstats=NA                     | ftp_present=False | 3-month functional outcome in ischaemic strok
+  GCST90018703 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Subarachnoid hemorrhage
+  GCST90018923 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Subarachnoid hemorrhage
+  GCST90651609 | sumstats=NA                     | ftp_present=False | Subarachnoid hemorrhage (PheCode 430.1)
+  GCST90651888 | sumstats=NA                     | ftp_present=False | Subarachnoid hemorrhage (injury) (PheCode 818
+  GCST90246095 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | ICD10 I60: Nontraumatic subarachnoid hemorrha
+  GCST90436135 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Subarachnoid hemorrhage (PheCode 430.1)
+  GCST90080028 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | ICD10 I60.9: Nontraumatic subarachnoid hemorr
+  GCST90137423 | sumstats=NA                     | ftp_present=False | Subarachnoid hemorrhage
+  GCST90137436 | sumstats=NA                     | ftp_present=False | Subarachnoid hemorrhage
+  GCST90137439 | sumstats=NA                     | ftp_present=False | Subarachnoid hemorrhage
+  GCST90080029 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | ICD10 I60: Nontraumatic subarachnoid hemorrha
+  GCST90084015 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | ICD10 I60: Nontraumatic subarachnoid hemorrha
+  GCST90084014 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | ICD10 I60.9: Nontraumatic subarachnoid hemorr
+  GCST90043993 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | Subarachnoid hemorrhage (PheCode 430.1)
+  GCST90477976 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Subarachnoid hemorrhage (PheCode 430.1)
+  GCST90480187 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | Subarachnoid hemorrhage (PheCode 430.1)
+  GCST90482520 | sumstats=NA                     | ftp_present=False | Subarachnoid hemorrhage (injury)
+  GCST90482015 | sumstats=NA                     | ftp_present=False | Subarachnoid hemorrhage (PheCode 430.1)
+  GCST90473583 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | ICD10 I60: Subarachnoid haemorrhage
+  GCST002389   | sumstats=NA                     | ftp_present=False | Intracerebral hemorrhage
+  GCST90080030 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | ICD10 I61.9: Nontraumatic intracerebral hemor
+  GCST90080031 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | ICD10 I61: Nontraumatic intracerebral hemorrh
+  GCST90018650 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Intracerebral hemorrhage
+  GCST90018870 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Intracerebral hemorrhage
+  GCST005426   | sumstats=NA                     | ftp_present=False | Intracranial haemorrhage in renal transplanta
+  GCST008873   | sumstats=NA                     | ftp_present=False | Non-lobar intracerebral hemorrhage
+  GCST008874   | sumstats=NA                     | ftp_present=False | Lobar intracerebral hemorrhage
+  GCST008875   | sumstats=NA                     | ftp_present=False | Intracerebral hemorrhage (MTAG)
+  GCST008876   | sumstats=NA                     | ftp_present=False | Non-lobar intracerebral hemorrhage (MTAG)
+  GCST008877   | sumstats=NA                     | ftp_present=False | Lobar intracerebral hemorrhage (MTAG)
+  GCST008878   | sumstats=NA                     | ftp_present=False | Intracerebral hemorrhage
+  GCST90246096 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | ICD10 I61: Nontraumatic intracerebral hemorrh
+  GCST90854300 | sumstats=NA                     | ftp_present=False | Intracerebral hemorrhage
+  GCST90432122 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Intracerebral hemorrhage stroke
+  GCST90432126 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Subcortical intracerebral hemorrhage
+  GCST90436136 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Intracerebral hemorrhage (PheCode 430.2)
+  GCST90137422 | sumstats=NA                     | ftp_present=False | Intracerebral hemorrhage
+  GCST90137435 | sumstats=NA                     | ftp_present=False | Intracerebral hemorrhage
+  GCST90137438 | sumstats=NA                     | ftp_present=False | Intracerebral hemorrhage
+  GCST90084017 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | ICD10 I61: Nontraumatic intracerebral hemorrh
+  GCST90084016 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | ICD10 I61.9: Nontraumatic intracerebral hemor
+  GCST90043994 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | Intracerebral hemorrhage (PheCode 430.2)
+  GCST006139   | sumstats=NA                     | ftp_present=False | Hematoma volume in lobar spontaneous intracer
+  GCST006140   | sumstats=NA                     | ftp_present=False | Hematoma volume in non-lobar spontaneous intr
+  GCST010837   | sumstats=NA                     | ftp_present=False | Intracerebral hemorrhage
+  GCST90651323 | sumstats=NA                     | ftp_present=False | Intracerebral hemorrhage (PheCode 430.2)
+  GCST90726935 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Intracerebral haemorrhage
+  GCST90726915 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | ICD10 I61: Intracerebral haemorrhage
+  GCST90832958 | sumstats=NA                     | ftp_present=False | ICD10 I61: Intracerebral haemorrhage
+  GCST90477977 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Intracerebral hemorrhage (PheCode 430.2)
+  GCST90477978 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | Intracerebral hemorrhage (PheCode 430.2)
+  GCST90480188 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=False | Intracerebral hemorrhage (PheCode 430.2)
+  GCST90473584 | sumstats=http://ftp.ebi.ac.uk/p | ftp_present=True | ICD10 I61: Intracerebral haemorrhage

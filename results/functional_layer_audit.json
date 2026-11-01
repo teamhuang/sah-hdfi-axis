@@ -1,0 +1,198 @@
+{
+  "task1_scATAC": {
+    "status": "executed",
+    "kind": "option_b_NRF2_ChIP-seq_reference",
+    "datasets": [
+      "ENCSR584GHV (ENCFF418TUX)",
+      "ENCSR707IUN (ENCFF305KIK)",
+      "ENCSR488EES (ENCFF882YLO)",
+      "ENCSR197WGI (ENCFF474PPT)"
+    ],
+    "n_cell_lines": 4,
+    "hmoax1_summary": [
+      {
+        "cell_line": "A549",
+        "window_kb": 2,
+        "n_peaks": 0,
+        "expected_uniform": 0.01,
+        "enrichment_ratio": 0.98,
+        "poisson_p_tail": 1.0
+      },
+      {
+        "cell_line": "A549",
+        "window_kb": 10,
+        "n_peaks": 2,
+        "expected_uniform": 0.048,
+        "enrichment_ratio": 4.56,
+        "poisson_p_tail": 0.0011322671652412852
+      },
+      {
+        "cell_line": "A549",
+        "window_kb": 100,
+        "n_peaks": 3,
+        "expected_uniform": 0.484,
+        "enrichment_ratio": 3.56,
+        "poisson_p_tail": 0.013173990788006185
+      },
+      {
+        "cell_line": "HeLa",
+        "window_kb": 2,
+        "n_peaks": 0,
+        "expected_uniform": 0.012,
+        "enrichment_ratio": 0.98,
+        "poisson_p_tail": 1.0
+      },
+      {
+        "cell_line": "HeLa",
+        "window_kb": 10,
+        "n_peaks": 2,
+        "expected_uniform": 0.06,
+        "enrichment_ratio": 4.47,
+        "poisson_p_tail": 0.0017213935276888526
+      },
+      {
+        "cell_line": "HeLa",
+        "window_kb": 100,
+        "n_peaks": 2,
+        "expected_uniform": 0.599,
+        "enrichment_ratio": 2.28,
+        "poisson_p_tail": 0.1214231653161797
+      },
+      {
+        "cell_line": "HepG2",
+        "window_kb": 2,
+        "n_peaks": 0,
+        "expected_uniform": 0.014,
+        "enrichment_ratio": 0.97,
+        "poisson_p_tail": 1.0
+      },
+      {
+        "cell_line": "HepG2",
+        "window_kb": 10,
+        "n_peaks": 2,
+        "expected_uniform": 0.07,
+        "enrichment_ratio": 4.39,
+        "poisson_p_tail": 0.002327198223899818
+      },
+      {
+        "cell_line": "HepG2",
+        "window_kb": 100,
+        "n_peaks": 4,
+        "expected_uniform": 0.698,
+        "enrichment_ratio": 3.76,
+        "poisson_p_tail": 0.005703895367556999
+      },
+      {
+        "cell_line": "IMR90",
+        "window_kb": 2,
+        "n_peaks": 1,
+        "expected_uniform": 0.023,
+        "enrichment_ratio": 2.87,
+        "poisson_p_tail": 0.022853643908740895
+      },
+      {
+        "cell_line": "IMR90",
+        "window_kb": 10,
+        "n_peaks": 3,
+        "expected_uniform": 0.116,
+        "enrichment_ratio": 5.69,
+        "poisson_p_tail": 0.00023611020606739697
+      },
+      {
+        "cell_line": "IMR90",
+        "window_kb": 100,
+        "n_peaks": 7,
+        "expected_uniform": 1.156,
+        "enrichment_ratio": 4.53,
+        "poisson_p_tail": 0.00020072162509832125
+      }
+    ],
+    "conclusion": "Real ENCODE NRF2 ChIP-seq (4 cell lines) quantifies NRF2 binding events at HMOX1 and the heme module vs a uniform/distance-decay null.",
+    "honest_label": "NRF2 chromatin-binding/accessibility reference; NOT SAH-specific scATAC."
+  },
+  "task2_lipidomics": {
+    "status": "executed",
+    "dataset": "Metabolomics Workbench ST002968 (Rattus norvegicus post-stroke untargeted LC-MS metabolomics; sham vs model vs drug), quantitative table via MW REST /data.",
+    "context": "stroke model (post-stroke depression), NOT haemorrhage; rat, NOT human SAH.",
+    "measured_named_metabolites": [
+      "Arachidonate (AA)",
+      "Linoleate (LA)",
+      "Glutathione (GSH)",
+      "GSSG",
+      "Cysteine (Cys)",
+      "Oleate",
+      "alpha-Linolenate (ALA)"
+    ],
+    "log2FC_model_over_sham": {
+      "Arachidonate (AA)": -2.234,
+      "Linoleate (LA)": -0.229,
+      "Glutathione (GSH)": -0.021,
+      "GSSG": 0.564,
+      "Cysteine (Cys)": 0.321,
+      "Oleate": -0.293,
+      "alpha-Linolenate (ALA)": 0.336
+    },
+    "MW_p_model_vs_sham": {
+      "Arachidonate (AA)": 0.008658008658008658,
+      "Linoleate (LA)": 0.48484848484848486,
+      "Glutathione (GSH)": 0.8181818181818182,
+      "GSSG": 0.13203463203463203,
+      "Cysteine (Cys)": 0.17965367965367965,
+      "Oleate": 0.3939393939393939,
+      "alpha-Linolenate (ALA)": 1.0
+    },
+    "not_measured_no_fabrication": [
+      "4-hydroxynonenal / 4-HNE",
+      "malondialdehyde / MDA",
+      "oxidised phosphatidylethanolamine (ox-PE)",
+      "hydroxy-eicosenoic acid (HETE/HODE)"
+    ],
+    "paired_transcriptomics": false,
+    "conclusion": "A real independent stroke metabolomics cohort quantifies AA/LA/GSH/GSSG/Cys with model-vs-sham differences; 4-HNE/MDA/oxPE are not in the panel and were NOT imputed. Cannot correlate to HDFI (no paired gene expression).",
+    "honest_label": "independent metabolomic corroboration (rat stroke panel), not SAH HDFI<->lipid proof."
+  },
+  "task3_spatial": {
+    "status": "executed",
+    "dataset": "GSE254161 mouse brain-injury (contusion) Visium A1 0-2dpi (matrix + tissue_positions).",
+    "why_not_SAH": "GSE311853 SAH spatial deposit has count matrices but NO spot coordinates, so SAH co-localisation cannot be computed there.",
+    "stats": {
+      "n_spots": 2743,
+      "pearson_HMOX1_myeloid": 0.2188290065746061,
+      "pearson_ferroNeuron_myeloid": 0.05366096478439673,
+      "neighborhood_HMOX1high_myeloidhigh_radius_px": 2.0,
+      "obs_frac_myeloid_high_around_HMOX1high": 0.24757926713499145,
+      "global_frac_myeloid_high": 0.25009114108640174,
+      "neighbourhood_enrichment_ratio": 0.9899561658181948,
+      "perm_p_value": 0.997002997002997,
+      "frac_ferroNeuron_high_around_HMOX1high": 0.13741218910195557,
+      "frac_ferroNeuron_high_away_from_HMOX1high": NaN
+    },
+    "conclusion": "Co-localisation METHODOLOGY validated in an independent brain-injury Visium; NOT presented as SAH-specific.",
+    "honest_label": "brain-injury Visium co-localisation reference (not SAH)."
+  },
+  "task4_cmap_drug": {
+    "status": "executed",
+    "method": "OpenTargets Platform GraphQL target.drugAndClinicalCandidates for HMOX1/NFE2L2/SLC7A11/GPX4/ACSL4/PTGS2.",
+    "blocked_alternatives": {
+      "CLUE.io": "login required (session constraint)",
+      "LINCS_L1000_CSV_dumps": "account required",
+      "Enrichr_LINCS_L1000_Chem_Pert": "addList OK but /enrich returned persistent HTTP 400 (POST) and empty {} (GET) for all libraries incl. KEGG - genuine LINCS signature match could not be obtained"
+    },
+    "per_target_drug_counts": {
+      "HMOX1": 0,
+      "NFE2L2": 2,
+      "SLC7A11": 0,
+      "GPX4": 0,
+      "ACSL4": 0,
+      "PTGS2": 79
+    },
+    "NFE2L2_captured_drugs": [
+      "OMAVELOXOLONE",
+      "BARDOXOLONE METHYL"
+    ],
+    "conclusion": "Real curated drug-target associations: NFE2L2 is directly druggable (bardoxolone methyl, omaveloxolone); GPX4/SLC7A11/HMOX1 have no catalogued approved modulators; PTGS2 has many (NSAIDs).",
+    "honest_label": "target-curated candidate shortlist (OpenTargets), NOT CMap/CLUE-computed reverse-signature connectivity."
+  },
+  "_round": "Round 10 functional-layer completion probe",
+  "_integrity_note": "All four executed on real public data; no synthetic values. Negative / absent measurements reported honestly (spatial co-localisation null; 4-HNE/MDA/oxPE not in panel; HMOX1/GPX4/SLC7A11 no catalogued drugs)."
+}

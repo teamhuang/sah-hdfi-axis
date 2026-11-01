@@ -1,0 +1,4 @@
+engine,true_ACIE,est_ACIE,ci,sig,verdict
+simple,0.48,0.481,"[0.415,0.546]",True,PASS
+serial,0.343,0.389,"[0.325,0.452]",True,PASS
+negative_control,0.0,-0.0,"[-0.004,0.004]",False,PASS

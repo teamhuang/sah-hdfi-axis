@@ -1,0 +1,83 @@
+{
+  "bulk_HDFI": {
+    "delta": 0.17697077989578247,
+    "cohend": 0.15805874956676574,
+    "p_two": 0.5638125800855405,
+    "p_greater": 0.28190629004277024
+  },
+  "neuron_HDFI_vs_ferroexec": {
+    "rho": 0.3365131510696631,
+    "p": 9.176858165232965e-44,
+    "n": 1604
+  },
+  "samplelevel_mgHDFI_vs_neuronFerro": {
+    "rho": 1.0,
+    "p": 0.0,
+    "n": 3
+  },
+  "samplelevel_neuronFerro_vs_microgliaHMOX1": {
+    "rho": 0.5,
+    "p": 0.6666666666666667,
+    "n": 3
+  },
+  "hdfi_by_celltype": [
+    {
+      "cell_type": "Microglia/Mac",
+      "sham": "-0.4243052",
+      "sah": "0.27586612",
+      "delta": "0.70017135",
+      "p": 7.816002420349672e-133
+    },
+    {
+      "cell_type": "Neutrophil",
+      "sham": "-0.72412455",
+      "sah": "-0.053644814",
+      "delta": "0.6704797",
+      "p": 0.026168252762895857
+    },
+    {
+      "cell_type": "Neuron",
+      "sham": "-0.3756375",
+      "sah": "-0.038806487",
+      "delta": "0.336831",
+      "p": 0.0013738657768473574
+    },
+    {
+      "cell_type": "Astrocyte",
+      "sham": "-0.24863012",
+      "sah": "0.7138679",
+      "delta": "0.962498",
+      "p": 9.125360878852692e-65
+    },
+    {
+      "cell_type": "Oligodendrocyte",
+      "sham": "-0.6625442",
+      "sah": "0.6411451",
+      "delta": "1.3036892",
+      "p": 9.549093576529228e-05
+    }
+  ],
+  "hdfi_time": [
+    {
+      "condition": "Sham",
+      "all_HDFI": "-0.49592325",
+      "neuron_HDFI": "-0.3756375",
+      "microglia_HDFI": "-0.4243052",
+      "neuron_FerroExec": "-0.12838674"
+    },
+    {
+      "condition": "SAH_24h",
+      "all_HDFI": "0.21528856",
+      "neuron_HDFI": "0.3164137",
+      "microglia_HDFI": "0.41160724",
+      "neuron_FerroExec": "-0.03897258"
+    },
+    {
+      "condition": "SAH_72h",
+      "all_HDFI": "0.1762146",
+      "neuron_HDFI": "-0.18447894",
+      "microglia_HDFI": "0.22017568",
+      "neuron_FerroExec": "-0.11133983"
+    }
+  ]
+}

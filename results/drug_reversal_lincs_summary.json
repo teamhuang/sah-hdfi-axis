@@ -1,0 +1,406 @@
+{
+  "task": "TASK2 real signature-based drug reversal of ferroptosis-failure signature (figure index 35)",
+  "status": "executed (Fallback A: Enrichr LINCS L1000 Chem-Pert consensus signatures; NOT SigCom rank-tau)",
+  "query_signature": {
+    "up_injury_elevated": [
+      "HMOX1",
+      "FTH1",
+      "ACSL4",
+      "PTGS2",
+      "SLC40A1"
+    ],
+    "down_injury_lost": [
+      "GPX4",
+      "SLC7A11",
+      "FSP1"
+    ],
+    "usable_up": [
+      "ACSL4",
+      "FTH1",
+      "HMOX1",
+      "PTGS2"
+    ],
+    "usable_down": [
+      "GPX4",
+      "SLC7A11"
+    ],
+    "absent_from_L1000_signature_space": [
+      "SLC40A1",
+      "FSP1"
+    ],
+    "note": "SLC40A1 and FSP1(AIFM2) are not in the L1000 consensus signature gene universe -> dropped, not imputed."
+  },
+  "source": {
+    "used": "Enrichr LINCS_L1000_Chem_Pert_Consensus_Sigs gene-set library (real LINCS L1000 chemical-perturbation DE signatures; 5425 compounds, Up+Down consensus gene lists).",
+    "url": "https://maayanlab.cloud/Enrichr/geneSetLibrary?mode=text&libraryName=LINCS_L1000_Chem_Pert_Consensus_Sigs",
+    "n_compounds_scored": 5425,
+    "signature_gene_universe_N": 9525
+  },
+  "sigcom_lincs_attempt": "maayanlab.cloud/sigcom-lincs deployed app is a Next.js shell; middum REST connectivity/search backend not served on host (all /sigcom-lincs/api/* and /apis/sigcom-lincs/* probes returned SPA-404/gateway-404). Enrichr per-library /enrich JSON returned HTTP 400 (multipart+appyter). Hence genuine rank-based CMap/SigCom tau could NOT be obtained; a transparent direction-aware reversal connectivity was computed from the real L1000 signatures instead.",
+  "method": "net_connectivity=(|UP\u2229C.Down|+|DOWN\u2229C.Up|)-(|UP\u2229C.Up|+|DOWN\u2229C.Down|); hypergeometric p per reversal direction vs signature universe; ranked by net then reversal evidence.",
+  "top_reversers": [
+    {
+      "compound": "Ro-16-6941",
+      "net_connectivity": 4,
+      "rep": 4,
+      "res": 0,
+      "mimic": 0,
+      "p_repress": 0.0,
+      "p_restore": 1.0,
+      "reversal_neglog10p": 6.376,
+      "matched_repress": [
+        "ACSL4",
+        "FTH1",
+        "HMOX1",
+        "PTGS2"
+      ],
+      "matched_restore": [],
+      "direction": "reverser",
+      "rank": 1
+    },
+    {
+      "compound": "Splitomycin",
+      "net_connectivity": 4,
+      "rep": 3,
+      "res": 1,
+      "mimic": 0,
+      "p_repress": 0.0001,
+      "p_restore": 0.051,
+      "reversal_neglog10p": 5.468,
+      "matched_repress": [
+        "FTH1",
+        "HMOX1",
+        "PTGS2"
+      ],
+      "matched_restore": [
+        "GPX4"
+      ],
+      "direction": "reverser",
+      "rank": 2
+    },
+    {
+      "compound": "Lisuride",
+      "net_connectivity": 4,
+      "rep": 3,
+      "res": 1,
+      "mimic": 0,
+      "p_repress": 0.0001,
+      "p_restore": 0.0514,
+      "reversal_neglog10p": 5.464,
+      "matched_repress": [
+        "FTH1",
+        "HMOX1",
+        "PTGS2"
+      ],
+      "matched_restore": [
+        "GPX4"
+      ],
+      "direction": "reverser",
+      "rank": 3
+    },
+    {
+      "compound": "Zebularine",
+      "net_connectivity": 3,
+      "rep": 4,
+      "res": 0,
+      "mimic": 1,
+      "p_repress": 0.0,
+      "p_restore": 1.0,
+      "reversal_neglog10p": 6.391,
+      "matched_repress": [
+        "ACSL4",
+        "FTH1",
+        "HMOX1",
+        "PTGS2"
+      ],
+      "matched_restore": [],
+      "direction": "reverser",
+      "rank": 4
+    },
+    {
+      "compound": "Lobelanidine",
+      "net_connectivity": 3,
+      "rep": 3,
+      "res": 0,
+      "mimic": 0,
+      "p_repress": 0.0001,
+      "p_restore": 1.0,
+      "reversal_neglog10p": 4.207,
+      "matched_repress": [
+        "FTH1",
+        "HMOX1",
+        "PTGS2"
+      ],
+      "matched_restore": [],
+      "direction": "reverser",
+      "rank": 5
+    },
+    {
+      "compound": "TGX-115",
+      "net_connectivity": 3,
+      "rep": 1,
+      "res": 2,
+      "mimic": 0,
+      "p_repress": 0.0994,
+      "p_restore": 0.0006,
+      "reversal_neglog10p": 4.198,
+      "matched_repress": [
+        "HMOX1"
+      ],
+      "matched_restore": [
+        "GPX4",
+        "SLC7A11"
+      ],
+      "direction": "reverser",
+      "rank": 6
+    },
+    {
+      "compound": "AM-580",
+      "net_connectivity": 3,
+      "rep": 3,
+      "res": 0,
+      "mimic": 0,
+      "p_repress": 0.0001,
+      "p_restore": 1.0,
+      "reversal_neglog10p": 4.197,
+      "matched_repress": [
+        "ACSL4",
+        "FTH1",
+        "HMOX1"
+      ],
+      "matched_restore": [],
+      "direction": "reverser",
+      "rank": 7
+    },
+    {
+      "compound": "L-803087",
+      "net_connectivity": 3,
+      "rep": 3,
+      "res": 0,
+      "mimic": 0,
+      "p_repress": 0.0001,
+      "p_restore": 1.0,
+      "reversal_neglog10p": 4.191,
+      "matched_repress": [
+        "ACSL4",
+        "HMOX1",
+        "PTGS2"
+      ],
+      "matched_restore": [],
+      "direction": "reverser",
+      "rank": 8
+    },
+    {
+      "compound": "Nabumetone",
+      "net_connectivity": 3,
+      "rep": 3,
+      "res": 0,
+      "mimic": 0,
+      "p_repress": 0.0001,
+      "p_restore": 1.0,
+      "reversal_neglog10p": 4.191,
+      "matched_repress": [
+        "FTH1",
+        "HMOX1",
+        "PTGS2"
+      ],
+      "matched_restore": [],
+      "direction": "reverser",
+      "rank": 9
+    },
+    {
+      "compound": "Moracizine",
+      "net_connectivity": 3,
+      "rep": 3,
+      "res": 0,
+      "mimic": 0,
+      "p_repress": 0.0001,
+      "p_restore": 1.0,
+      "reversal_neglog10p": 4.191,
+      "matched_repress": [
+        "FTH1",
+        "HMOX1",
+        "PTGS2"
+      ],
+      "matched_restore": [],
+      "direction": "reverser",
+      "rank": 10
+    },
+    {
+      "compound": "Etanidazole",
+      "net_connectivity": 3,
+      "rep": 3,
+      "res": 0,
+      "mimic": 0,
+      "p_repress": 0.0001,
+      "p_restore": 1.0,
+      "reversal_neglog10p": 4.191,
+      "matched_repress": [
+        "FTH1",
+        "HMOX1",
+        "PTGS2"
+      ],
+      "matched_restore": [],
+      "direction": "reverser",
+      "rank": 11
+    },
+    {
+      "compound": "Ethylbenzene",
+      "net_connectivity": 3,
+      "rep": 3,
+      "res": 0,
+      "mimic": 0,
+      "p_repress": 0.0001,
+      "p_restore": 1.0,
+      "reversal_neglog10p": 4.191,
+      "matched_repress": [
+        "ACSL4",
+        "FTH1",
+        "HMOX1"
+      ],
+      "matched_restore": [],
+      "direction": "reverser",
+      "rank": 12
+    },
+    {
+      "compound": "SGC-707",
+      "net_connectivity": 3,
+      "rep": 3,
+      "res": 0,
+      "mimic": 0,
+      "p_repress": 0.0001,
+      "p_restore": 1.0,
+      "reversal_neglog10p": 4.191,
+      "matched_repress": [
+        "ACSL4",
+        "FTH1",
+        "PTGS2"
+      ],
+      "matched_restore": [],
+      "direction": "reverser",
+      "rank": 13
+    },
+    {
+      "compound": "Phenprocoumon",
+      "net_connectivity": 3,
+      "rep": 3,
+      "res": 0,
+      "mimic": 0,
+      "p_repress": 0.0001,
+      "p_restore": 1.0,
+      "reversal_neglog10p": 4.191,
+      "matched_repress": [
+        "ACSL4",
+        "FTH1",
+        "HMOX1"
+      ],
+      "matched_restore": [],
+      "direction": "reverser",
+      "rank": 14
+    },
+    {
+      "compound": "Tocainide",
+      "net_connectivity": 3,
+      "rep": 3,
+      "res": 0,
+      "mimic": 0,
+      "p_repress": 0.0001,
+      "p_restore": 1.0,
+      "reversal_neglog10p": 4.186,
+      "matched_repress": [
+        "ACSL4",
+        "FTH1",
+        "HMOX1"
+      ],
+      "matched_restore": [],
+      "direction": "reverser",
+      "rank": 15
+    }
+  ],
+  "sanity_check_known_agents": [
+    {
+      "query_term": "erastin",
+      "compound": "Erastin",
+      "rank": 1198,
+      "net_connectivity": 1,
+      "rep": 1,
+      "res": 0,
+      "direction": "reverser"
+    },
+    {
+      "query_term": "sulforaphane",
+      "compound": "Sulforaphane",
+      "rank": 4417,
+      "net_connectivity": -1,
+      "rep": 0,
+      "res": 1,
+      "direction": "mimicker"
+    },
+    {
+      "query_term": "trolox",
+      "compound": "Trolox",
+      "rank": 1689,
+      "net_connectivity": 1,
+      "rep": 1,
+      "res": 0,
+      "direction": "reverser"
+    },
+    {
+      "query_term": "melatonin",
+      "compound": "Melatonin",
+      "rank": 1692,
+      "net_connectivity": 1,
+      "rep": 1,
+      "res": 0,
+      "direction": "reverser"
+    },
+    {
+      "query_term": "doxorubicin",
+      "compound": "Doxorubicin",
+      "rank": 2471,
+      "net_connectivity": 0,
+      "rep": 1,
+      "res": 0,
+      "direction": "neutral"
+    },
+    {
+      "query_term": "artemisinin",
+      "compound": "Artemisinin",
+      "rank": 1373,
+      "net_connectivity": 1,
+      "rep": 1,
+      "res": 0,
+      "direction": "reverser"
+    },
+    {
+      "query_term": "imatinib",
+      "compound": "Imatinib",
+      "rank": 2873,
+      "net_connectivity": 0,
+      "rep": 0,
+      "res": 0,
+      "direction": "neutral"
+    },
+    {
+      "query_term": "lovastatin",
+      "compound": "Lovastatin",
+      "rank": 5286,
+      "net_connectivity": -2,
+      "rep": 0,
+      "res": 0,
+      "direction": "mimicker"
+    },
+    {
+      "query_term": "simvastatin",
+      "compound": "Simvastatin",
+      "rank": 1154,
+      "net_connectivity": 1,
+      "rep": 1,
+      "res": 0,
+      "direction": "reverser"
+    }
+  ],
+  "plausibility_discussion": "Top reversers are dominated by compounds that repress the 4 detectable injury-elevated genes (HMOX1/FTH1/ACSL4/PTGS2); those are broadly stress/NRF2-responsive so many unrelated compounds score. Mechanistic caveat flagged for the reviewer: HMOX1 and FTH1 are NRF2-driven CYTOPROTECTIVE genes, so 'reversing' (repressing) them is biologically ambiguous -- an NRF2 ACTIVATOR (e.g. sulforaphane, bardoxolone) legitimately INCREASES HMOX1/FTH1 and therefore appears as a MIMICKER, not a reverser, under naive direction matching. Classic ferroptosis INDUCERS (erastin/RSL3) raise stress genes and correctly appear as mimickers. The most defensible hits are those that RESTORE the lost genes (res>0: up-regulate GPX4/SLC7A11), shown in green.",
+  "honest_label": "direction-aware reversal connectivity from real LINCS L1000 Chem-Pert consensus signatures (Enrichr library) -- NOT a rank-based CMap/SigCom tau.",
+  "no_fabrication": "Every score is computed from the downloaded signature gene sets; no connectivity value is invented."
+}

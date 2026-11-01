@@ -1,0 +1,630 @@
+{
+  "n_cells_raw": 43950,
+  "hdfi_measured": [
+    "Hmox1",
+    "Fth1",
+    "Ftl1",
+    "Gpx4",
+    "Acsl4",
+    "Hp",
+    "Cd163",
+    "Tfrc",
+    "Slc40a1"
+  ],
+  "hdfi_missing": [],
+  "hdfi_computable": true,
+  "n_cells_after_qc": 43569,
+  "n_used": 15000,
+  "subsampled": true,
+  "subsample_max": 15000,
+  "markers_used_per_panel": {
+    "Myeloid(microglia/macrophage)": [
+      "P2ry12",
+      "Tmem119",
+      "Cx3cr1",
+      "Csf1r",
+      "Adgre1",
+      "Cd68",
+      "Sall1"
+    ],
+    "Neutrophil": [
+      "Elane",
+      "Mpo",
+      "S100a8",
+      "S100a9"
+    ],
+    "T cell": [
+      "Cd3e",
+      "Cd3d",
+      "Lck",
+      "Il7r",
+      "Cd247"
+    ],
+    "B cell": [
+      "Cd79a",
+      "Cd79b",
+      "Ms4a4a",
+      "Pax5"
+    ],
+    "NK": [
+      "Ncr1",
+      "Klrd1",
+      "Gzma"
+    ],
+    "Dendritic": [
+      "Itgax",
+      "Flt3",
+      "Cd83",
+      "Il12b"
+    ]
+  },
+  "markers_missing": {
+    "Myeloid(microglia/macrophage)": [],
+    "Neutrophil": [
+      "CSF3R"
+    ],
+    "T cell": [],
+    "B cell": [],
+    "NK": [],
+    "Dendritic": []
+  },
+  "detection_fraction": {
+    "Hmox1": 0.5514,
+    "Fth1": 0.9893333333333333,
+    "Ftl1": 0.9282,
+    "Gpx4": 0.7444,
+    "Acsl4": 0.4262666666666667,
+    "Hp": 0.15573333333333333,
+    "Cd163": 0.0292,
+    "Tfrc": 0.1418,
+    "Slc40a1": 0.3379333333333333
+  },
+  "sample_level_myeloid": {
+    "Myeloid(microglia/macrophage)": {
+      "GSM9333532": {
+        "tag": "Sham",
+        "cond": "Sham",
+        "n_cells": 1082,
+        "mean_hdfi": -0.3425751956771556,
+        "median_hdfi": -0.7726166838153568
+      },
+      "GSM9333533": {
+        "tag": "SAH_24h1",
+        "cond": "SAH24",
+        "n_cells": 238,
+        "mean_hdfi": 0.6871702442052036,
+        "median_hdfi": 0.515231111017937
+      },
+      "GSM9333534": {
+        "tag": "SAH_24h2",
+        "cond": "SAH24",
+        "n_cells": 910,
+        "mean_hdfi": 0.4236556048940874,
+        "median_hdfi": 0.35024400854166515
+      },
+      "GSM9333535": {
+        "tag": "SAH_72h1",
+        "cond": "SAH72",
+        "n_cells": 1838,
+        "mean_hdfi": -0.07926733633709654,
+        "median_hdfi": -0.25733366566502114
+      },
+      "GSM9333536": {
+        "tag": "SAH_72h2",
+        "cond": "SAH72",
+        "n_cells": 1980,
+        "mean_hdfi": 0.27995972412000036,
+        "median_hdfi": 0.18906402925823332
+      }
+    }
+  },
+  "pseudo_replication_caveat": "Cell-level Kruskal-Wallis / Mann-Whitney p-values treat each cell as an independent observation. Cells within a sample are NOT independent (pseudo-replication); these p-values are descriptive of cell-population separation, NOT inferential evidence at the biological-sample level. Only 5 samples exist (Sham n=1, SAH24 n=2, SAH72 n=2), so sample-level hypothesis testing is under-powered and is reported descriptively only.",
+  "correlations": {
+    "HDFI_vs_Hmox1_logexpr": {
+      "rho": 0.08871091101827752,
+      "p": 1.3532803579998137e-27,
+      "n": 15000
+    },
+    "HDFI_vs_ferroptosis_proxy": {
+      "rho": 0.3996842599106419,
+      "p": 0.0,
+      "n": 15000,
+      "proxy_def": "(Acsl4+Tfrc-Gpx4)"
+    }
+  },
+  "myeloid_summary": {
+    "medians": {
+      "Sham": -0.7726166838153568,
+      "SAH24": 0.38580088007483826,
+      "SAH72": -0.03976326733463709
+    },
+    "kw_p": 5.764406006751718e-56,
+    "pairwise": {
+      "Sham_vs_SAH24": {
+        "p_celllevel": 1.63566164591616e-49,
+        "median_diff_b_minus_a": 1.158417563890195,
+        "boot95CI_median_diff": [
+          0.9826383142314723,
+          1.3258652178418013
+        ],
+        "n_a": 1082,
+        "n_b": 1148
+      },
+      "Sham_vs_SAH72": {
+        "p_celllevel": 6.832272562323417e-34,
+        "median_diff_b_minus_a": 0.7328534164807197,
+        "boot95CI_median_diff": [
+          0.5976306763009055,
+          0.8880692650415276
+        ],
+        "n_a": 1082,
+        "n_b": 3818
+      },
+      "SAH24_vs_SAH72": {
+        "p_celllevel": 2.8684368451363177e-16,
+        "median_diff_b_minus_a": -0.42556414740947535,
+        "boot95CI_median_diff": [
+          -0.5187730218023932,
+          -0.3186357479421123
+        ],
+        "n_a": 1148,
+        "n_b": 3818
+      }
+    }
+  },
+  "composition_fraction_by_cond": {
+    "Sham": {
+      "Myeloid(microglia/macrophage)": 0.25688509021842354,
+      "Neutrophil": 0.044396961063627734,
+      "T cell": 0.016619183285849954,
+      "B cell": 0.017806267806267807,
+      "NK": 0.5754985754985755,
+      "Dendritic": 0.08879392212725547
+    },
+    "SAH24": {
+      "Myeloid(microglia/macrophage)": 0.26180159635119726,
+      "Neutrophil": 0.4175598631698974,
+      "T cell": 0.04561003420752566,
+      "B cell": 0.10558722919042189,
+      "NK": 0.04880273660205245,
+      "Dendritic": 0.12063854047890536
+    },
+    "SAH72": {
+      "Myeloid(microglia/macrophage)": 0.5962829923473372,
+      "Neutrophil": 0.047009214430735594,
+      "T cell": 0.03920037482430111,
+      "B cell": 0.09995314696236139,
+      "NK": 0.06184600968296111,
+      "Dendritic": 0.1557082617523036
+    }
+  },
+  "n_cells_by_cond": {
+    "Sham": 4212,
+    "SAH24": 4385,
+    "SAH72": 6403
+  },
+  "files_downloaded": [
+    {
+      "file": "GSM9333532_filtered_Sham_barcodes.tsv.gz",
+      "bytes": 61010
+    },
+    {
+      "file": "GSM9333532_filtered_Sham_features.tsv.gz",
+      "bytes": 251118
+    },
+    {
+      "file": "GSM9333532_filtered_Sham_matrix.mtx.gz",
+      "bytes": 68496510
+    },
+    {
+      "file": "GSM9333533_filtered_SAH_24h1_barcodes.tsv.gz",
+      "bytes": 30569
+    },
+    {
+      "file": "GSM9333533_filtered_SAH_24h1_features.tsv.gz",
+      "bytes": 290896
+    },
+    {
+      "file": "GSM9333533_filtered_SAH_24h1_matrix.mtx.gz",
+      "bytes": 74446785
+    },
+    {
+      "file": "GSM9333534_filtered_SAH_24h2_barcodes.tsv.gz",
+      "bytes": 36630
+    },
+    {
+      "file": "GSM9333534_filtered_SAH_24h2_features.tsv.gz",
+      "bytes": 290896
+    },
+    {
+      "file": "GSM9333534_filtered_SAH_24h2_matrix.mtx.gz",
+      "bytes": 113379039
+    },
+    {
+      "file": "GSM9333535_filtered_SAH_72h1_barcodes.tsv.gz",
+      "bytes": 50695
+    },
+    {
+      "file": "GSM9333535_filtered_SAH_72h1_features.tsv.gz",
+      "bytes": 290896
+    },
+    {
+      "file": "GSM9333535_filtered_SAH_72h1_matrix.mtx.gz",
+      "bytes": 129358715
+    },
+    {
+      "file": "GSM9333536_filtered_SAH_72h2_barcodes.tsv.gz",
+      "bytes": 45852
+    },
+    {
+      "file": "GSM9333536_filtered_SAH_72h2_features.tsv.gz",
+      "bytes": 290896
+    },
+    {
+      "file": "GSM9333536_filtered_SAH_72h2_matrix.mtx.gz",
+      "bytes": 119467320
+    }
+  ],
+  "dataset": "GSE311852 (Mus musculus, CD45+ immune, injured hemisphere; in-vivo cross-species corroboration -- NOT human, NOT SAH-CSF)",
+  "hdfi_formula": "z(Hmox1) - z(Fth1) - z(Ftl1) - z(Gpx4), z across all cells ddof=0, input log1p(CPM) [matches scripts/47]",
+  "results_stats": {
+    "Myeloid(microglia/macrophage)": {
+      "n_cells_by_cond": {
+        "Sham": 1082,
+        "SAH24": 1148,
+        "SAH72": 3818
+      },
+      "medians": {
+        "Sham": -0.7726166838153568,
+        "SAH24": 0.38580088007483826,
+        "SAH72": -0.03976326733463709
+      },
+      "kruskal_H": 254.3861261872844,
+      "kruskal_p_celllevel": 5.764406006751718e-56,
+      "kw_conds_tested": [
+        "Sham",
+        "SAH24",
+        "SAH72"
+      ],
+      "pairwise": {
+        "Sham_vs_SAH24": {
+          "p_celllevel": 1.63566164591616e-49,
+          "median_diff_b_minus_a": 1.158417563890195,
+          "boot95CI_median_diff": [
+            0.9826383142314723,
+            1.3258652178418013
+          ],
+          "n_a": 1082,
+          "n_b": 1148
+        },
+        "Sham_vs_SAH72": {
+          "p_celllevel": 6.832272562323417e-34,
+          "median_diff_b_minus_a": 0.7328534164807197,
+          "boot95CI_median_diff": [
+            0.5976306763009055,
+            0.8880692650415276
+          ],
+          "n_a": 1082,
+          "n_b": 3818
+        },
+        "SAH24_vs_SAH72": {
+          "p_celllevel": 2.8684368451363177e-16,
+          "median_diff_b_minus_a": -0.42556414740947535,
+          "boot95CI_median_diff": [
+            -0.5187730218023932,
+            -0.3186357479421123
+          ],
+          "n_a": 1148,
+          "n_b": 3818
+        }
+      }
+    },
+    "Neutrophil": {
+      "n_cells_by_cond": {
+        "Sham": 187,
+        "SAH24": 1831,
+        "SAH72": 301
+      },
+      "medians": {
+        "Sham": 0.28601481620302227,
+        "SAH24": -0.6522035239085451,
+        "SAH72": -0.725705924153752
+      },
+      "kruskal_H": 26.93416469142198,
+      "kruskal_p_celllevel": 1.4168388276056259e-06,
+      "kw_conds_tested": [
+        "Sham",
+        "SAH24",
+        "SAH72"
+      ],
+      "pairwise": {
+        "Sham_vs_SAH24": {
+          "p_celllevel": 1.2632716963933734e-06,
+          "median_diff_b_minus_a": -0.9382183401115674,
+          "boot95CI_median_diff": [
+            -1.2101805547004971,
+            -0.6086496505316366
+          ],
+          "n_a": 187,
+          "n_b": 1831
+        },
+        "Sham_vs_SAH72": {
+          "p_celllevel": 1.3974267819055136e-06,
+          "median_diff_b_minus_a": -1.0117207403567743,
+          "boot95CI_median_diff": [
+            -1.3208766269578058,
+            -0.6595044396423061
+          ],
+          "n_a": 187,
+          "n_b": 301
+        },
+        "SAH24_vs_SAH72": {
+          "p_celllevel": 0.18804897197512727,
+          "median_diff_b_minus_a": -0.07350240024520693,
+          "boot95CI_median_diff": [
+            -0.1987737673502279,
+            0.09191966485600503
+          ],
+          "n_a": 1831,
+          "n_b": 301
+        }
+      }
+    },
+    "T cell": {
+      "n_cells_by_cond": {
+        "Sham": 70,
+        "SAH24": 200,
+        "SAH72": 251
+      },
+      "medians": {
+        "Sham": -0.46250719003945806,
+        "SAH24": -0.6042172308099374,
+        "SAH72": -0.2622729692805985
+      },
+      "kruskal_H": 7.252914790308993,
+      "kruskal_p_celllevel": 0.026610287358631884,
+      "kw_conds_tested": [
+        "Sham",
+        "SAH24",
+        "SAH72"
+      ],
+      "pairwise": {
+        "Sham_vs_SAH24": {
+          "p_celllevel": 0.04325801760958428,
+          "median_diff_b_minus_a": -0.14171004077047933,
+          "boot95CI_median_diff": [
+            -0.7723362126364773,
+            0.2600402698436438
+          ],
+          "n_a": 70,
+          "n_b": 200
+        },
+        "Sham_vs_SAH72": {
+          "p_celllevel": 0.39786926282548407,
+          "median_diff_b_minus_a": 0.20023422075885955,
+          "boot95CI_median_diff": [
+            -0.47926527508381334,
+            0.578699747353961
+          ],
+          "n_a": 70,
+          "n_b": 251
+        },
+        "SAH24_vs_SAH72": {
+          "p_celllevel": 0.01948007385140614,
+          "median_diff_b_minus_a": 0.3419442615293389,
+          "boot95CI_median_diff": [
+            0.06785608392780107,
+            0.5870085790506656
+          ],
+          "n_a": 200,
+          "n_b": 251
+        }
+      }
+    },
+    "B cell": {
+      "n_cells_by_cond": {
+        "Sham": 75,
+        "SAH24": 463,
+        "SAH72": 640
+      },
+      "medians": {
+        "Sham": -0.4923530688837963,
+        "SAH24": -0.4458667634935698,
+        "SAH72": -0.7047718149621418
+      },
+      "kruskal_H": 9.646973922305278,
+      "kruskal_p_celllevel": 0.008038707550387873,
+      "kw_conds_tested": [
+        "Sham",
+        "SAH24",
+        "SAH72"
+      ],
+      "pairwise": {
+        "Sham_vs_SAH24": {
+          "p_celllevel": 0.2786485374773172,
+          "median_diff_b_minus_a": 0.04648630539022652,
+          "boot95CI_median_diff": [
+            -0.43433377610183155,
+            0.6841555163342462
+          ],
+          "n_a": 75,
+          "n_b": 463
+        },
+        "Sham_vs_SAH72": {
+          "p_celllevel": 0.9950496025606559,
+          "median_diff_b_minus_a": -0.2124187460783455,
+          "boot95CI_median_diff": [
+            -0.6980340660237198,
+            0.4827524705995784
+          ],
+          "n_a": 75,
+          "n_b": 640
+        },
+        "SAH24_vs_SAH72": {
+          "p_celllevel": 0.0017640965345445117,
+          "median_diff_b_minus_a": -0.258905051468572,
+          "boot95CI_median_diff": [
+            -0.36475461389647146,
+            -0.13669069032871664
+          ],
+          "n_a": 463,
+          "n_b": 640
+        }
+      }
+    },
+    "NK": {
+      "n_cells_by_cond": {
+        "Sham": 2424,
+        "SAH24": 214,
+        "SAH72": 396
+      },
+      "medians": {
+        "Sham": 0.1608291073216188,
+        "SAH24": -0.3061171810714578,
+        "SAH72": -0.5424472286484754
+      },
+      "kruskal_H": 25.897649570913757,
+      "kruskal_p_celllevel": 2.3790131825193847e-06,
+      "kw_conds_tested": [
+        "Sham",
+        "SAH24",
+        "SAH72"
+      ],
+      "pairwise": {
+        "Sham_vs_SAH24": {
+          "p_celllevel": 0.5972355774572291,
+          "median_diff_b_minus_a": -0.4669462883930766,
+          "boot95CI_median_diff": [
+            -0.7064517378002412,
+            -0.11001711091731635
+          ],
+          "n_a": 2424,
+          "n_b": 214
+        },
+        "Sham_vs_SAH72": {
+          "p_celllevel": 3.275240409877331e-07,
+          "median_diff_b_minus_a": -0.7032763359700942,
+          "boot95CI_median_diff": [
+            -0.9202614047558553,
+            -0.4896607269424905
+          ],
+          "n_a": 2424,
+          "n_b": 396
+        },
+        "SAH24_vs_SAH72": {
+          "p_celllevel": 0.00797102792311623,
+          "median_diff_b_minus_a": -0.2363300475770176,
+          "boot95CI_median_diff": [
+            -0.6386011514849785,
+            0.08079474994885816
+          ],
+          "n_a": 214,
+          "n_b": 396
+        }
+      }
+    },
+    "Dendritic": {
+      "n_cells_by_cond": {
+        "Sham": 374,
+        "SAH24": 529,
+        "SAH72": 997
+      },
+      "medians": {
+        "Sham": 0.1244324804226149,
+        "SAH24": -0.20403516788965237,
+        "SAH72": -0.5532205439210963
+      },
+      "kruskal_H": 35.31638294733711,
+      "kruskal_p_celllevel": 2.143605598330072e-08,
+      "kw_conds_tested": [
+        "Sham",
+        "SAH24",
+        "SAH72"
+      ],
+      "pairwise": {
+        "Sham_vs_SAH24": {
+          "p_celllevel": 0.02944333424255302,
+          "median_diff_b_minus_a": -0.32846764831226727,
+          "boot95CI_median_diff": [
+            -0.5891280549347259,
+            -0.12725426265567197
+          ],
+          "n_a": 374,
+          "n_b": 529
+        },
+        "Sham_vs_SAH72": {
+          "p_celllevel": 9.393483322384714e-07,
+          "median_diff_b_minus_a": -0.6776530243437112,
+          "boot95CI_median_diff": [
+            -0.9230554399838683,
+            -0.4633219004918974
+          ],
+          "n_a": 374,
+          "n_b": 997
+        },
+        "SAH24_vs_SAH72": {
+          "p_celllevel": 7.296948583370951e-06,
+          "median_diff_b_minus_a": -0.34918537603144395,
+          "boot95CI_median_diff": [
+            -0.48193232603316266,
+            -0.20066333373925854
+          ],
+          "n_a": 529,
+          "n_b": 997
+        }
+      }
+    },
+    "_sample_level_myeloid": {
+      "Myeloid(microglia/macrophage)": {
+        "GSM9333532": {
+          "tag": "Sham",
+          "cond": "Sham",
+          "n_cells": 1082,
+          "mean_hdfi": -0.3425751956771556,
+          "median_hdfi": -0.7726166838153568
+        },
+        "GSM9333533": {
+          "tag": "SAH_24h1",
+          "cond": "SAH24",
+          "n_cells": 238,
+          "mean_hdfi": 0.6871702442052036,
+          "median_hdfi": 0.515231111017937
+        },
+        "GSM9333534": {
+          "tag": "SAH_24h2",
+          "cond": "SAH24",
+          "n_cells": 910,
+          "mean_hdfi": 0.4236556048940874,
+          "median_hdfi": 0.35024400854166515
+        },
+        "GSM9333535": {
+          "tag": "SAH_72h1",
+          "cond": "SAH72",
+          "n_cells": 1838,
+          "mean_hdfi": -0.07926733633709654,
+          "median_hdfi": -0.25733366566502114
+        },
+        "GSM9333536": {
+          "tag": "SAH_72h2",
+          "cond": "SAH72",
+          "n_cells": 1980,
+          "mean_hdfi": 0.27995972412000036,
+          "median_hdfi": 0.18906402925823332
+        }
+      }
+    },
+    "_correlations": {
+      "HDFI_vs_Hmox1_logexpr": {
+        "rho": 0.08871091101827752,
+        "p": 1.3532803579998137e-27,
+        "n": 15000
+      },
+      "HDFI_vs_ferroptosis_proxy": {
+        "rho": 0.3996842599106419,
+        "p": 0.0,
+        "n": 15000,
+        "proxy_def": "(Acsl4+Tfrc-Gpx4)"
+      }
+    }
+  }
+}

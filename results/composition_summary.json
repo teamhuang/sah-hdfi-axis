@@ -1,0 +1,114 @@
+{
+  "composition_shift": {
+    "Neutrophil": {
+      "delta": 0.1378527283668518
+    },
+    "Monocyte": {
+      "delta": 0.10744810849428177
+    },
+    "T": {
+      "delta": -0.1793639361858368
+    },
+    "B": {
+      "delta": -0.07787969708442688
+    },
+    "NK": {
+      "delta": -0.07176044583320618
+    },
+    "Erythroid": {
+      "delta": 0.08370324224233627
+    }
+  },
+  "n_outcomes": 11,
+  "survive_adjustment_q0_10": [],
+  "table": [
+    {
+      "outcome": "HP",
+      "beta_unadj": 0.8976,
+      "p_unadj": 0.0011,
+      "beta_adj": 0.0513,
+      "p_adj": 0.8679,
+      "q_adj": 0.9538
+    },
+    {
+      "outcome": "HMOX1",
+      "beta_unadj": 0.3369,
+      "p_unadj": 0.237,
+      "beta_adj": 0.2611,
+      "p_adj": 0.4106,
+      "q_adj": 0.8312
+    },
+    {
+      "outcome": "FTH1",
+      "beta_unadj": 0.7852,
+      "p_unadj": 0.0046,
+      "beta_adj": 0.1346,
+      "p_adj": 0.694,
+      "q_adj": 0.9538
+    },
+    {
+      "outcome": "FTL",
+      "beta_unadj": 0.4976,
+      "p_unadj": 0.0786,
+      "beta_adj": -0.2579,
+      "p_adj": 0.4394,
+      "q_adj": 0.8312
+    },
+    {
+      "outcome": "SLC40A1",
+      "beta_unadj": 0.8666,
+      "p_unadj": 0.0016,
+      "beta_adj": 0.052,
+      "p_adj": 0.8649,
+      "q_adj": 0.9538
+    },
+    {
+      "outcome": "MARC1",
+      "beta_unadj": 1.1191,
+      "p_unadj": 0.0,
+      "beta_adj": 0.199,
+      "p_adj": 0.4534,
+      "q_adj": 0.8312
+    },
+    {
+      "outcome": "GPX4",
+      "beta_unadj": -0.4815,
+      "p_unadj": 0.0891,
+      "beta_adj": 0.3462,
+      "p_adj": 0.2966,
+      "q_adj": 0.8312
+    },
+    {
+      "outcome": "SLC25A37",
+      "beta_unadj": 0.8698,
+      "p_unadj": 0.0016,
+      "beta_adj": 0.3121,
+      "p_adj": 0.2789,
+      "q_adj": 0.8312
+    },
+    {
+      "outcome": "NFE2",
+      "beta_unadj": 0.9338,
+      "p_unadj": 0.0006,
+      "beta_adj": -0.1504,
+      "p_adj": 0.5685,
+      "q_adj": 0.8934
+    },
+    {
+      "outcome": "HEME_MODULE",
+      "beta_unadj": 0.697,
+      "p_unadj": 0.0,
+      "beta_adj": 0.1498,
+      "p_adj": 0.1707,
+      "q_adj": 0.8312
+    },
+    {
+      "outcome": "HDFI",
+      "beta_unadj": 0.177,
+      "p_unadj": 0.5756,
+      "beta_adj": -0.0235,
+      "p_adj": 0.9538,
+      "q_adj": 0.9538
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "macrophage_argmax": {
+    "chi2": 571.2732807205301,
+    "p": 8.903961267839088e-125,
+    "sham_share": {
+      "homeostatic": 0.8201680672268907,
+      "iron-handling": 0.04201680672268908,
+      "ferroptosis-prone": 0.13781512605042018
+    },
+    "sah_share": {
+      "homeostatic": 0.5314735336194564,
+      "iron-handling": 0.22782546494992847,
+      "ferroptosis-prone": 0.24070100143061515
+    }
+  },
+  "macrophage_kmeans": {
+    "chi2": 658.9537367421987,
+    "p": 8.128570030183358e-144,
+    "sham_share": {
+      "homeostatic": 0.6789915966386555,
+      "iron-handling": 0.03081232492997199,
+      "ferroptosis-prone": 0.2901960784313726
+    },
+    "sah_share": {
+      "homeostatic": 0.3824034334763948,
+      "iron-handling": 0.21108726752503576,
+      "ferroptosis-prone": 0.40650929899856936
+    }
+  },
+  "neutrophil": {
+    "chi2": 37.94854963036423,
+    "p": 7.26350472675785e-10,
+    "sham_heme_stressed": 0.109375,
+    "sah_heme_stressed": 0.5045077533357375,
+    "mean_score_sham": 0.04535635933279991,
+    "mean_score_sah": 1.584845781326294,
+    "mwu_p_greater": 1.5973415399040965e-26
+  }
+}

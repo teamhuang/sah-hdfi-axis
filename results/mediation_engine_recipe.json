@@ -1,0 +1,49 @@
+{
+  "model": "HRR -> heme-detoxification-failure (HDFI / plasma HP, free-Hb, HMOX1) -> brain injury (infarct volume / NIHSS / ICP) -> death/mRS",
+  "engines": [
+    "Baron-Kenny + bootstrap ACIE (simple)",
+    "serial mediation X->M1->M2->Y (bootstrap)",
+    "SEM with lavaan/semopy (full latent path, robust SE)"
+  ],
+  "binary_outcome_note": "For death/mRS use natural-effects (AIPW) mediation or logistic SEM; linear ACIE here is for engine validation only.",
+  "real_data_inputs_needed": [
+    "MIMIC-IV SAH: admission Hb, RDW -> HRR; in-hospital death, mRS",
+    "matched plasma at admission: HP, free Hb, HMOX1, ferritin, MDA/4-HNE (proxy for HDFI) OR an HDFI from paired blood RNA",
+    "imaging severity (Fisher/modified Fisher, DCI, infarct) as M2"
+  ],
+  "steps": [
+    "assemble cohort with HRR + mediator + severity + outcome",
+    "standardise/one-hot covariates (age, sex, WFNS)",
+    "fit mediator~HRR+cov; outcome~mediator+HRR+cov; bootstrap ACIE",
+    "sensitivity: E-value / natural-effects for unmeasured mediator-outcome confounding",
+    "report % mediated = ACIE/total"
+  ],
+  "blocker": "no public cohort pairs HRR with the molecular mediators; MIMIC-IV not present in this folder. No real mediation estimate is reported \u2014 engine only.",
+  "validation": [
+    {
+      "engine": "simple",
+      "true_ACIE": 0.48,
+      "est_ACIE": 0.481,
+      "ci": "[0.415,0.546]",
+      "sig": true,
+      "verdict": "PASS"
+    },
+    {
+      "engine": "serial",
+      "true_ACIE": 0.343,
+      "est_ACIE": 0.389,
+      "ci": "[0.325,0.452]",
+      "sig": true,
+      "verdict": "PASS"
+    },
+    {
+      "engine": "negative_control",
+      "true_ACIE": 0.0,
+      "est_ACIE": -0.0,
+      "ci": "[-0.004,0.004]",
+      "sig": false,
+      "verdict": "PASS"
+    }
+  ],
+  "honesty": "Only synthetic validation is a result; real mediation is NOT computed and NOT fabricated."
+}
