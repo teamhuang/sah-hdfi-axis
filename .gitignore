@@ -19,3 +19,12 @@ manuscript/RESPONSE_TO_REVIEWER*.md
 Thumbs.db
 .DS_Store
 *.tmp
+
+# session scratch / logs / QA contact sheets (not part of the reproduction record)
+_log_*.txt
+_run_figs*
+_qa/
+_processed/
+*.h5ad
+manuscript/.MAIN_backup.md
+manuscript/FIGURE_INVENTORY.md

@@ -1,4 +1,8 @@
 #!/usr/bin/env python
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 # -*- coding: utf-8 -*-
 """
 34_mr_panel.py -- REAL two-sample Mendelian-randomisation PANEL over the haemoglobin /
@@ -582,10 +586,6 @@ def make_figure(df):
     ax.set_yticks(np.arange(-0.5, nrows, 1), minor=True)
     ax.grid(which="minor", color="white", lw=2)
     ax.tick_params(which="minor", length=0)
-    fig.text(0.5, 0.02,
-             "Real GWAS Catalog harmonised sumstats (European pQTL x European UKB-WGS outcomes). "
-             "n = retained IVs; null cells reported as-is.",
-             ha="center", fontsize=6.0, color="#444444")
     fig.tight_layout(rect=(0, 0.045, 1, 1))
     png = os.path.join(FIG, "Fig24_mr_panel.png"); pdf = os.path.join(FIG, "Fig24_mr_panel.pdf")
     fig.savefig(png, dpi=300); fig.savefig(pdf)

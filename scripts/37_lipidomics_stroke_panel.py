@@ -35,6 +35,10 @@ import os, json, time, re
 import numpy as np, pandas as pd
 from scipy import stats
 import matplotlib
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
@@ -131,8 +135,7 @@ print(df[["metabolite","status","log2FC_model_over_sham","MW_p_model_vs_sham"]].
 
 # ---- figure: measured analytes, sham vs model (+drug) ----
 meas=[r for r in results if r.get("status")=="measured" and r.get("mean_sham") is not None]
-fig, axes = plt.subplots(1, 2, figsize=(11.8,5.0), gridspec_kw={"width_ratios":[3,2]})
-ax=axes[0]
+fig, ax = plt.subplots(figsize=(6.5, 4.2))
 labels=[r["metabolite"] for r in meas]
 xpos=np.arange(len(labels)); gcols={"sham":OI["blue"],"model":OI["verm"],"low":OI["green"],"high":OI["orange"]}
 allvals=[]
@@ -157,19 +160,6 @@ for i,r in enumerate(meas):
 ax.set_title("ST002968 rat stroke panel: sham vs model vs drug\n(blue=sham, vermilion=stroke-model, green/orange=drug low/high)")
 import matplotlib.patches as mpatches
 ax.legend(handles=[mpatches.Patch(color=c,label=k) for k,c in gcols.items()], fontsize=8, loc="best")
-
-ax2=axes[1]; ax2.axis("off")
-lines=[]
-for r in meas:
-    if r.get("log2FC_model_over_sham") is not None:
-        sig = "p=%.3g"%r.get("MW_p_model_vs_sham") if r.get("MW_p_model_vs_sham") else "n.s."
-        arrow = "up" if r["log2FC_model_over_sham"]>0 else "down"
-        lines.append(f"  {r['metabolite']:<22s} log2FC(model/sham)={r['log2FC_model_over_sham']:+.2f}  ({arrow}; {sig})")
-lines.append("")
-lines.append("NOT measured in this panel (not fabricated):")
-for k in NAMED_ABSENT: lines.append("  - "+k)
-ax2.text(0.02,0.96,"Model vs sham (fold-change):\n"+"\n".join(lines), va="top", ha="left", fontsize=8.5, family="monospace")
-ax2.set_title("Group difference summary", fontsize=9)
 
 fig.suptitle("INDEPENDENT metabolomic corroboration (rat stroke model, MW ST002968); no paired transcriptomic HDFI.\n"
              "This is NOT an SAH HDFI<->lipid proof.", fontsize=8)

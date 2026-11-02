@@ -21,12 +21,16 @@ import numpy as np, pandas as pd
 import anndata as ad
 from scipy import stats
 import matplotlib
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RES = os.path.join(ROOT, "results"); FIG = os.path.join(ROOT, "figures")
-H5 = r"C:/Users/Admin/.qoderworkcn/workspace/muycr5n2rnyoywup/sah_rds/sah_scrna_annot.h5ad"
+H5 = r"H:/徐伟明论文/sah_rbc_bioinfo/_processed/sah_scrna_annot.h5ad"
 
 plt.rcParams.update({"font.family": "sans-serif", "font.sans-serif": ["Arial", "DejaVu Sans"], "pdf.fonttype": 42})
 OI = {"black":"#000000","orange":"#E69F00","sky":"#56B4E9","green":"#009E73","purple":"#CC79A7","verm":"#D55E00","blue":"#0072B2","grey":"#8C8C8C"}

@@ -45,6 +45,11 @@ Outputs:
 import os, re, json
 import numpy as np, pandas as pd
 import matplotlib; matplotlib.use("Agg")
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.mark_whole("Fig38_sah_csf_lipidomics")
+_ns.savefig_patch()
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 from matplotlib.patches import Rectangle
@@ -133,7 +138,7 @@ def load_mouse_anchor():
 # -----------------------------------------------------------------------------
 def make_figure(hum_fdr, hum_uncorr, mouse, path_png, path_pdf):
     fig = plt.figure(figsize=(10.4, 5.0))
-    gs = fig.add_gridspec(1, 3, width_ratios=[1.02, 1.12, 0.96], wspace=0.56, left=0.145, right=0.975, top=0.80, bottom=0.20)
+    gs = fig.add_gridspec(1, 2, width_ratios=[1.02, 1.12], wspace=0.62, left=0.145, right=0.975, top=0.80, bottom=0.20)
 
     # --- Panel A: human CSF verbatim differential lipids (class-level direction) ---
     axA = fig.add_subplot(gs[0, 0])
@@ -181,42 +186,9 @@ def make_figure(hum_fdr, hum_uncorr, mouse, path_png, path_pdf):
         axB.set_title("Ferroptosis EXECUTION lipids\n(real LC-MS/MS, mouse models)", fontsize=9, fontweight="bold")
 
     # --- Panel C: evidence map for the ferroptosis-lipid index ---
-    axC = fig.add_subplot(gs[0, 2]); axC.axis("off")
-    lines = [
-        ("Ferroptosis-lipid evidence chain", True),
-        ("", False),
-        ("RNA layer  :  PUFA-PL machinery (ACSL4) +", False),
-        ("              ferritin/ferritin-loss program", False),
-        ("              in HDFI axis  (Fig 18/24/36)", False),
-        ("", False),
-        ("Execution   :  ox-PE 17-28x, free AA 2.44x,", False),
-        ("  lipids     PE-20:4 substrates consumed", True),
-        ("              (mouse ferroptosis models)", False),
-        ("", False),
-        ("Human CSF   :  ether/plasmenyl-PE +", False),
-        ("  direction   arachidonoyl + PUFA-containing", False),
-        ("              species UP in SAH (verbatim)", False),
-        ("", False),
-        ("NOT computable:", True),
-        ("  a single per-patient human", False),
-        ("  ferroptosis-lipid index, because", False),
-        ("  the human CSF per-sample matrix", False),
-        ("  is not openly deposited", False),
-    ]
-    ytop = 0.98; step = 0.045
-    for i,(tx,bold) in enumerate(lines):
-        axC.text(0.02, ytop-i*step, tx, fontsize=7.4,
-                 fontweight=("bold" if bold else "normal"),
-                 color=(OI["verm"] if bold else "#222222"))
-    axC.set_title("Integration & limits", fontsize=9, fontweight="bold")
-
     fig.suptitle("Ferroptosis lipid layer of the HDFI axis — human SAH-CSF lipidomics (verbatim) + "
                  "real execution-lipid anchor",
                  fontsize=11, fontweight="bold", y=0.985)
-    note = ("Human CSF per-sample abundance is NOT openly downloadable (MacAulayLab GitHub = code only; journal supplement is figures-only),\n"
-            "so panel A reproduces the authors' published differential-lipid findings VERBATIM (13 SAH vs 11 control) and is never re-derived.\n"
-            "Panel B numbers are real but from mouse cell-culture ferroptosis (valinomycin MEFs / RSL3 MDSCs), not human SAH; no paired within-patient HDFI-lipid correlation is claimed.")
-    fig.text(0.5, 0.012, note, ha="center", va="bottom", fontsize=6.6, color=OI["grey"])
     fig.savefig(path_png, dpi=300)
     fig.savefig(path_pdf)
     plt.close(fig)

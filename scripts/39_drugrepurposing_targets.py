@@ -30,6 +30,10 @@ import os, json, time
 import numpy as np, pandas as pd
 import requests
 import matplotlib
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
@@ -83,28 +87,13 @@ nrows = df.groupby("target").size().reindex(list(TARGETS)).fillna(0)
 approved = df[df.max_clinical_stage.isin(["APPROVAL","PHASE_4","PHASE_3"])].groupby("target").size().reindex(list(TARGETS)).fillna(0)
 
 # ---- figure ----
-fig, axes = plt.subplots(1, 2, figsize=(11.6, 5.0))
-ax=axes[0]
+fig, ax = plt.subplots(figsize=(6.5, 4.0))
 y=np.arange(len(TARGETS))
 ax.barh(y, nrows.values, color=OI["blue"], label="all curated drugs")
 ax.barh(y, approved.values, color=OI["verm"], label=">=Phase 3 / approved")
 ax.set_yticks(y); ax.set_yticklabels(list(TARGETS)); ax.invert_yaxis()
 ax.set_xlabel("# small-molecule modulators (OpenTargets)"); ax.legend(fontsize=8)
 ax.set_title("Target-curated candidate shortlist\n(drug-target associations, NOT CMap connectivity)")
-
-# NRF2-axis approved modulators call-out
-nf = df[df.target.isin(["NFE2L2","GPX4","SLC7A11","HMOX1"]) & df.max_clinical_stage.isin(["APPROVAL","PHASE_3","PHASE_4"])]
-ax2=axes[1]; ax2.axis("off")
-if len(nf):
-    txt = "NRF2/ferroptosis-axis drugs with >=Phase 3:\n\n" + "\n".join(
-        f"  {d}  ({t}, {s})" for t,s,d in zip(nf.target, nf.max_clinical_stage, nf.drug))
-else:
-    txt = "No >=Phase-3 drugs catalogued directly against\nNFE2L2/GPX4/SLC7A11/HMOX1 in OpenTargets."
-# also list PTGS2 (downstream COX-2) approved as ferroptosis-inflammatory node
-pt = df[(df.target=="PTGS2") & df.max_clinical_stage.isin(["APPROVAL"])]["drug"].head(6).tolist()
-txt += "\n\n(PTGS2/COX-2 approved inhibitors e.g.: "+", ".join(pt)+")"
-ax2.text(0.02,0.95,txt, va="top", ha="left", fontsize=8.5, family="monospace")
-ax2.set_title("Curated hits on the heme/NRF2 axis", fontsize=9)
 
 fig.suptitle("OpenTargets Platform drug-target associations (no login). Honest note: CLUE.io & Enrichr-LINCS\n"
              "signature-matching were login/end-point blocked, so this is a curated shortlist, NOT a computed connectivity map.", fontsize=8)

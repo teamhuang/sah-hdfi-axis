@@ -7,7 +7,7 @@ sc.settings.verbosity=1
 BASE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 S=os.path.join(BASE,"scrna"); RES=os.path.join(BASE,"results"); FIG=os.path.join(BASE,"figures")
 os.makedirs(RES,exist_ok=True)
-SCRATCH="C:/Users/Admin/.qoderworkcn/workspace/muycr5n2rnyoywup/sah_rds"
+SCRATCH="H:/徐伟明论文/sah_rbc_bioinfo/_processed"
 os.makedirs(SCRATCH,exist_ok=True)
 
 SAMPLES={ "GSM9333532":"Sham","GSM9333533":"SAH_24h","GSM9333534":"SAH_24h",

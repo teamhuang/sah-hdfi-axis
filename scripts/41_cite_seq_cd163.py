@@ -34,6 +34,10 @@ import os, gzip, json, time, urllib.request
 import numpy as np, pandas as pd
 from scipy import stats
 import matplotlib
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
@@ -230,7 +234,7 @@ def main():
 
     # ---------- FIGURE 34 (4 panels, no panel letters) ----------
     fig=plt.figure(figsize=(12.2,8.4))
-    gs=fig.add_gridspec(2,2,hspace=0.36,wspace=0.30)
+    gs=fig.add_gridspec(2,2,hspace=0.42,wspace=0.62)
 
     # Panel: RNA vs ADT scatter (hexbin) for CD163 and MRC1
     for mk,ttl,col in [("CD163","CD163",0),("MRC1","MRC1 / CD206",1)]:

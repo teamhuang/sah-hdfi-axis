@@ -1,0 +1,23 @@
+{
+  "status": "executed",
+  "method": "OpenTargets Platform GraphQL target.drugAndClinicalCandidates for HMOX1/NFE2L2/SLC7A11/GPX4/ACSL4/PTGS2.",
+  "blocked_alternatives": {
+    "CLUE.io": "login required (session constraint)",
+    "LINCS_L1000_CSV_dumps": "account required",
+    "Enrichr_LINCS_L1000_Chem_Pert": "addList OK but /enrich returned persistent HTTP 400 (POST) and empty {} (GET) for all libraries incl. KEGG - genuine LINCS signature match could not be obtained"
+  },
+  "per_target_drug_counts": {
+    "HMOX1": 0,
+    "NFE2L2": 2,
+    "SLC7A11": 0,
+    "GPX4": 0,
+    "ACSL4": 0,
+    "PTGS2": 79
+  },
+  "NFE2L2_captured_drugs": [
+    "OMAVELOXOLONE",
+    "BARDOXOLONE METHYL"
+  ],
+  "conclusion": "Real curated drug-target associations: NFE2L2 is directly druggable (bardoxolone methyl, omaveloxolone); GPX4/SLC7A11/HMOX1 have no catalogued approved modulators; PTGS2 has many (NSAIDs).",
+  "honest_label": "target-curated candidate shortlist (OpenTargets), NOT CMap/CLUE-computed reverse-signature connectivity."
+}

@@ -1,6 +1,10 @@
 """09_figures.py -- publication figures (Okabe-Ito palette, Arial, individual PNG+vector PDF panels)."""
 import os, numpy as np, pandas as pd, matplotlib
 matplotlib.use("Agg")
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 from scipy import stats
@@ -31,10 +35,19 @@ ax.scatter(x[ns],y[ns],s=6,c="#B9BEC4",linewidths=0)
 ax.scatter(x[up],y[up],s=18,c=OKABE["vermil"],linewidths=0)
 ax.scatter(x[dn],y[dn],s=18,c=OKABE["blue"],linewidths=0)
 lab=["HP","MARC1","NFE2","CST7","IL2RB","SLC40A1","FTH1","SLC25A37","GYPB","MMP9","S100A12","ANXA3","EOMES","FCER1A"]
+_texts=[]
 for g in lab:
     r=deg[deg.gene==g]
-    if len(r): r=r.iloc[0]; ax.annotate(g,(r.logFC,-np.log10(max(r["P.Value"],1e-300))),
-        fontsize=7,xytext=(3,2),textcoords="offset points",color=OKABE["black"])
+    if len(r):
+        r=r.iloc[0]
+        _texts.append(ax.annotate(g,(r.logFC,-np.log10(max(r["P.Value"],1e-300))),fontsize=6.5,color=OKABE["black"]))
+try:
+    from adjustText import adjust_text
+    adjust_text(_texts, ax=ax, expand=(1.9,2.6), expand_text=(1.4,2.2), maxiter=1200,
+                min_arrow_len=4, force_text=(1.2,1.8), force_points=(0.6,0.6),
+                arrowprops=dict(arrowstyle="-",lw=0.4,color="#888888"))
+except Exception as e:
+    print("adjustText skipped:", e)
 ax.axhline(-np.log10(0.05),ls="--",lw=0.7,c="grey"); ax.axvline(0,ls=":",lw=0.7,c="grey")
 ax.axvline(1,color="grey",ls=":",lw=0.7); ax.axvline(-1,color="grey",ls=":",lw=0.7)
 ax.set_xlabel("log2FC (SAH vs Control)"); ax.set_ylabel(r"$-$log$_{10}$ P")
@@ -72,7 +85,7 @@ cb=fig.colorbar(im,ax=ax,fraction=0.03,pad=0.02); cb.set_label("row z",fontsize=
 save(fig,"Fig3_heatmap_candidates",10,8)
 
 # ---------- Fig4 enrichment (ORA + GSEA focus) ----------
-fig,axes=plt.subplots(1,2)
+fig,axes=plt.subplots(1,2,gridspec_kw={"wspace":1.15})
 ax=axes[0]
 ora=pd.read_csv(os.path.join(RES,"ORA_candidates_GO_Biological_Process_2023.csv")).head(8).iloc[::-1]
 ax.barh(range(len(ora)),-np.log10(ora["Adjusted P-value"]),color=OKABE["green"])

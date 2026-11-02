@@ -1,6 +1,10 @@
 """17_scrna_deep_figures.py -- Fig12: cell-type-specific axis DE, neuron ferroptosis panel, regulon activity."""
 import os, numpy as np, pandas as pd, matplotlib
 matplotlib.use("Agg"); import matplotlib.pyplot as plt
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 from matplotlib import rcParams
 BASE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RES,FIG=os.path.join(BASE,"results"),os.path.join(BASE,"figures")
@@ -14,17 +18,18 @@ def save(fig,name,w,h):
 DE=pd.read_csv(os.path.join(RES,"scrna_celltype_DE_panels.csv"))
 REG=pd.read_csv(os.path.join(RES,"scrna_regulon_proxy.csv"))
 
-fig=plt.figure(figsize=(13,4.2)); gs=fig.add_gridspec(1,3,wspace=0.55)
+fig=plt.figure(figsize=(13,4.2)); gs=fig.add_gridspec(1,3,wspace=0.95)
 # A: log2FC heatmap by cell type
 ax=fig.add_subplot(gs[0,0])
 piv=DE.pivot_table(index="gene",columns="cell_type",values="log2FC")
 order=["Neutrophil","Microglia/Mac","Neuron"]
 piv=piv.reindex(columns=[c for c in order if c in piv.columns])
 im=ax.imshow(piv.values,cmap="RdBu_r",vmin=-3,vmax=3,aspect="auto")
-ax.set_xticks(range(piv.shape[1])); ax.set_xticklabels([c.replace("/","/\n") for c in piv.columns],fontsize=7)
+_short={"Neutrophil":"Neutro","Microglia/Mac":"MG/Mac","Neuron":"Neuron"}
+ax.set_xticks(range(piv.shape[1])); ax.set_xticklabels([_short.get(c,c) for c in piv.columns],fontsize=7,rotation=30,ha="right")
 ax.set_yticks(range(piv.shape[0])); ax.set_yticklabels(piv.index,fontsize=7)
 ax.set_title("SAH−Sham log2FC\n(cell-type-specific)",fontsize=8)
-fig.colorbar(im,ax=ax,fraction=0.04)
+fig.colorbar(im,ax=ax,fraction=0.04,pad=0.03)
 # B: neuron ferroptosis panel
 ax=fig.add_subplot(gs[0,1])
 neu=DE[DE.cell_type=="Neuron"].sort_values("log2FC")
@@ -38,10 +43,13 @@ ax=fig.add_subplot(gs[0,2])
 x=np.arange(len(REG)); w=0.38
 ax.bar(x-w/2,REG.Sham_activity,w,color="#9AA0A6",label="Sham")
 ax.bar(x+w/2,REG.SAH_activity,w,color=OKABE["green"],label="SAH")
+top=max(REG.Sham_activity.max(),REG.SAH_activity.max())
+ax.set_ylim(0,top*1.35)
 for i,r in REG.iterrows():
     ax.text(i+w/2,r.SAH_activity+0.02,f"p={r.SAH_vs_Sham_p:.1e}",ha="center",fontsize=5.5)
 ax.set_xticks(x); ax.set_xticklabels([s.replace("_"," ") for s in REG.regulon],fontsize=6.5,rotation=20)
-ax.set_ylabel("regulon activity score"); ax.legend(fontsize=7)
+ax.set_ylabel("regulon activity score")
+ax.legend(fontsize=7,loc="upper left",framealpha=0.9)
 ax.set_title("SCENIC-lite curated regulons\n(NRF2 up in SAH)",fontsize=8)
 save(fig,"Fig12_scrna_deep",13,4.6)
 print("DONE 17")

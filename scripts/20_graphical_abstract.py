@@ -10,6 +10,11 @@ import json
 import numpy as np
 import pandas as pd
 import matplotlib
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.mark_whole("Fig0_graphical_abstract")
+_ns.savefig_patch()
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch, Circle

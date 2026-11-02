@@ -15,13 +15,17 @@ import os, numpy as np, pandas as pd
 import anndata as ad
 from scipy.stats import spearmanr, pearsonr
 import matplotlib; matplotlib.use("Agg")
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 from sklearn.decomposition import PCA
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA, RES, FIG = (os.path.join(ROOT,x) for x in ("data","results","figures"))
-H5 = r"C:/Users/Admin/.qoderworkcn/workspace/muycr5n2rnyoywup/sah_rds/sah_scrna_annot.h5ad"
+H5 = r"H:/徐伟明论文/sah_rbc_bioinfo/_processed/sah_scrna_annot.h5ad"
 OI = dict(blue="#0072B2", orange="#E69F00", green="#009E73", verm="#D55E00",
           purple="#CC79A7", sky="#56B4E9", grey="#555555")
 rcParams.update({"font.family":"Arial","font.size":9,"axes.linewidth":0.9,

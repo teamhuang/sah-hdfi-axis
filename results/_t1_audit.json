@@ -1,0 +1,111 @@
+{
+  "status": "executed",
+  "kind": "option_b_NRF2_ChIP-seq_reference",
+  "datasets": [
+    "ENCSR584GHV (ENCFF418TUX)",
+    "ENCSR707IUN (ENCFF305KIK)",
+    "ENCSR488EES (ENCFF882YLO)",
+    "ENCSR197WGI (ENCFF474PPT)"
+  ],
+  "n_cell_lines": 4,
+  "hmoax1_summary": [
+    {
+      "cell_line": "A549",
+      "window_kb": 2,
+      "n_peaks": 0,
+      "expected_uniform": 0.01,
+      "enrichment_ratio": 0.98,
+      "poisson_p_tail": 1.0
+    },
+    {
+      "cell_line": "A549",
+      "window_kb": 10,
+      "n_peaks": 2,
+      "expected_uniform": 0.048,
+      "enrichment_ratio": 4.56,
+      "poisson_p_tail": 0.0011322671652412852
+    },
+    {
+      "cell_line": "A549",
+      "window_kb": 100,
+      "n_peaks": 3,
+      "expected_uniform": 0.484,
+      "enrichment_ratio": 3.56,
+      "poisson_p_tail": 0.013173990788006185
+    },
+    {
+      "cell_line": "HeLa",
+      "window_kb": 2,
+      "n_peaks": 0,
+      "expected_uniform": 0.012,
+      "enrichment_ratio": 0.98,
+      "poisson_p_tail": 1.0
+    },
+    {
+      "cell_line": "HeLa",
+      "window_kb": 10,
+      "n_peaks": 2,
+      "expected_uniform": 0.06,
+      "enrichment_ratio": 4.47,
+      "poisson_p_tail": 0.0017213935276888526
+    },
+    {
+      "cell_line": "HeLa",
+      "window_kb": 100,
+      "n_peaks": 2,
+      "expected_uniform": 0.599,
+      "enrichment_ratio": 2.28,
+      "poisson_p_tail": 0.1214231653161797
+    },
+    {
+      "cell_line": "HepG2",
+      "window_kb": 2,
+      "n_peaks": 0,
+      "expected_uniform": 0.014,
+      "enrichment_ratio": 0.97,
+      "poisson_p_tail": 1.0
+    },
+    {
+      "cell_line": "HepG2",
+      "window_kb": 10,
+      "n_peaks": 2,
+      "expected_uniform": 0.07,
+      "enrichment_ratio": 4.39,
+      "poisson_p_tail": 0.002327198223899818
+    },
+    {
+      "cell_line": "HepG2",
+      "window_kb": 100,
+      "n_peaks": 4,
+      "expected_uniform": 0.698,
+      "enrichment_ratio": 3.76,
+      "poisson_p_tail": 0.005703895367556999
+    },
+    {
+      "cell_line": "IMR90",
+      "window_kb": 2,
+      "n_peaks": 1,
+      "expected_uniform": 0.023,
+      "enrichment_ratio": 2.87,
+      "poisson_p_tail": 0.022853643908740895
+    },
+    {
+      "cell_line": "IMR90",
+      "window_kb": 10,
+      "n_peaks": 3,
+      "expected_uniform": 0.116,
+      "enrichment_ratio": 5.69,
+      "poisson_p_tail": 0.00023611020606739697
+    },
+    {
+      "cell_line": "IMR90",
+      "window_kb": 100,
+      "n_peaks": 7,
+      "expected_uniform": 1.156,
+      "enrichment_ratio": 4.53,
+      "poisson_p_tail": 0.00020072162509832125
+    }
+  ],
+  "conclusion": "Real ENCODE NRF2 ChIP-seq (4 cell lines) quantifies NRF2 binding events at HMOX1 and the heme module vs a uniform/distance-decay null.",
+  "honest_label": "NRF2 chromatin-binding/accessibility reference; NOT SAH-specific scATAC."
+}

@@ -4,6 +4,10 @@ Addresses the composition-confounding limitation quantitatively."""
 import os, numpy as np, pandas as pd
 from scipy import stats
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 from matplotlib import rcParams
 BASE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RES,DAT=os.path.join(BASE,"results"),os.path.join(BASE,"data"); FIG=os.path.join(BASE,"figures")

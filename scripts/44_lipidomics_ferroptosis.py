@@ -54,6 +54,10 @@ import os, json, time, re
 import numpy as np, pandas as pd
 from scipy import stats
 import matplotlib
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import urllib.request
@@ -245,34 +249,6 @@ if pufa:
     axB.set_xlabel("log2 FC  (RSL3 ferroptosis / control)")
     axB.set_title("ST004928  PUFA substrate / free-FA axis\nRSL3 (GPX4i) vs control, POS-mode, green=95% CI",fontsize=8.5,color=OI["green"])
     axB.grid(axis="x",ls=":",lw=0.5,alpha=0.5)
-
-# --- panel C: presence/absence of the 6 requested markers ---
-axC=fig.add_subplot(gs[1,1]); axC.axis("off")
-txt=["Reviewer-requested markers -- measured vs NOT (never imputed):"]
-for k,(st,note) in PRESENCE.items():
-    mark={"PRESENT":"OK ","ABSENT":"-- ","PRESENT,":"OK "}
-    tag="PRESENT" if st.startswith("PRESENT") else "ABSENT"
-    col="g" if tag=="PRESENT" else "r"
-    txt.append(f"[{tag:7s}] {k}")
-axC.text(0.02,0.98,"\n".join(txt),va="top",ha="left",fontsize=7.2,family="monospace",
-         transform=axC.transAxes)
-# colour PRESENT vs ABSENT lines by drawing separate
-axC.clear(); axC.axis("off")
-SHORT={"4-HNE (4-hydroxynonenal)":"not in ST003337/ST004928; not imputed",
-       "MDA (malondialdehyde)":"not quantified; not imputed",
-       "ox-PE (PE-OOH / oxidised PE)":"5 ox-PE species, absolute nmol/10^6",
-       "AA (arachidonate 20:4)":"free FA(20:4) + esterified 20:4",
-       "LA (linoleate 18:2)":"esterified only (PE 18:0/18:2)",
-       "GSH / GSSG":"absent in all open ferroptosis data"}
-axC.text(0.02,0.98,"Requested markers: PRESENT vs ABSENT (not imputed)",va="top",ha="left",fontsize=8,weight="bold",color=OI["blue"])
-yy=0.86
-for k,(st,note) in PRESENCE.items():
-    present=st.startswith("PRESENT")
-    axC.text(0.03,yy,("PRESENT" if present else "ABSENT "),va="top",ha="left",fontsize=7.4,family="monospace",
-             color=OI["green"] if present else OI["verm"],weight="bold")
-    axC.text(0.24,yy,k,va="top",ha="left",fontsize=7.2,family="monospace")
-    axC.text(0.24,yy-0.072,"        "+SHORT.get(k,note),va="top",ha="left",fontsize=6.0,color=OI["grey"],family="monospace")
-    yy-=0.155
 
 fig.suptitle("REAL lipidomics of ferroptosis EXECUTION lipids (Metabolomics Workbench ST003337 + ST004928)\n"
              "ox-PE directly measured (mouse valinomycin-fibroblast + RSL3-MDSC ferroptosis models); "

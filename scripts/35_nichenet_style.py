@@ -43,12 +43,16 @@ import anndata as ad
 from scipy import stats
 from scipy.spatial import cKDTree
 import matplotlib
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RES = os.path.join(ROOT, "results"); FIG = os.path.join(ROOT, "figures")
-H5 = r"C:/Users/Admin/.qoderworkcn/workspace/muycr5n2rnyoywup/sah_rds/sah_scrna_annot.h5ad"
+H5 = r"H:/徐伟明论文/sah_rbc_bioinfo/_processed/sah_scrna_annot.h5ad"
 plt.rcParams.update({"font.family": "sans-serif", "font.sans-serif": ["Arial", "DejaVu Sans"], "pdf.fonttype": 42})
 # Okabe-Ito colour-blind-safe palette
 OI = {"black": "#000000", "orange": "#E69F00", "sky": "#56B4E9", "green": "#009E73",
@@ -239,18 +243,18 @@ y = np.arange(n)[::-1]
 cols = [OI["verm"] if (pd.notna(p) and p < 0.05) else OI["blue"] for p in show["emp_activity_p"]]
 ax.barh(y, show["combined_score"].values, color=cols, height=0.62,
         edgecolor=OI["black"], linewidth=0.5)
-# annotate the three components to the right of each bar
+# annotate the components in a fixed column right of the longest bar
 maxs = show["combined_score"].max()
 for yi, (_, r) in zip(y, show.iterrows()):
-    ax.text(r.combined_score + maxs * 0.02, yi,
-            f"prior={int(r.prior_weight)}  sender \u0394={r.sender_log2FC_sah_vs_sham:+.2f}  "
+    ax.text(maxs * 1.06, yi,
+            f"sender \u0394={r.sender_log2FC_sah_vs_sham:+.2f}  "
             f"\u03c1={r.emp_activity_rho:+.2f}"
             + ("*" if (pd.notna(r.emp_activity_p) and r.emp_activity_p < 0.05) else ""),
-            va="center", ha="left", fontsize=7.6, color=OI["black"])
+            va="center", ha="left", fontsize=7.2, color=OI["black"])
 ax.set_yticks(y)
 ax.set_yticklabels(show["ligand"].values, fontsize=9.5)
-ax.set_xlim(0, maxs * 1.95)
-ax.set_xlabel("NicheNet-STYLE combined ligand-target score\n(normalised prior \u00d7 sender log2FC \u00d7 empirical activity)", fontsize=8.6)
+ax.set_xlim(0, maxs * 2.7)
+ax.set_xlabel("NicheNet-STYLE ligand-target score", fontsize=8.6)
 ax.set_title("Neutrophil ligand \u2192 microglial/macrophage HMOX1\u00b7FTH1\u00b7FTL1\u00b7SLC40A1\n"
              "(NicheNet-STYLE, not NicheNet; curated prior; K=25 UMAP exposure)",
              fontsize=9.8, weight="bold")
@@ -259,7 +263,7 @@ ax.axvline(0, color=OI["black"], lw=0.8)
 from matplotlib.patches import Patch
 ax.legend(handles=[Patch(facecolor=OI["verm"], edgecolor=OI["black"], label="empirical activity p<0.05"),
                    Patch(facecolor=OI["blue"], edgecolor=OI["black"], label="empirical activity n.s.")],
-          fontsize=7.8, frameon=False, loc="lower right")
+          fontsize=7.4, frameon=False, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncol=2)
 for s in ("top", "right", "left"):
     ax.spines[s].set_visible(False)
 ax.tick_params(axis="y", length=0)

@@ -32,11 +32,15 @@ OUTPUTS (only these files are written; no other project file is touched):
   results/mouse_sah_atlas_summary.json
   figures/Fig39_mouse_sah_atlas.png   +   .pdf
 """
-import os, re, json, gzip
+import os, re, json, gzip, glob
 import numpy as np
 import pandas as pd
 from scipy import io as sio, stats, sparse
 import matplotlib; matplotlib.use("Agg")
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 from matplotlib.gridspec import GridSpec
@@ -419,8 +423,8 @@ def main():
     # =========================================================================
     print("[7] drawing figure ...")
     fig = plt.figure(figsize=(11.0, 8.2))
-    gs = GridSpec(2, 2, figure=fig, hspace=0.34, wspace=0.30,
-                  left=0.135, right=0.97, top=0.90, bottom=0.16)
+    gs = GridSpec(2, 2, figure=fig, hspace=0.55, wspace=0.34,
+                  left=0.10, right=0.97, top=0.92, bottom=0.10)
 
     # ---- Panel 1: composition ----
     ax1 = fig.add_subplot(gs[0, 0])
@@ -436,7 +440,7 @@ def main():
     ax1.set_ylabel("Cell composition (%)")
     ax1.set_title("Cell-type composition of mouse CD45+ atlas", fontweight="bold")
     ax1.set_ylim(0, 100)
-    ax1.legend(fontsize=6.0, loc="center left", bbox_to_anchor=(1.01, 0.5), frameon=False)
+    ax1.legend(fontsize=6.0, loc="upper center", bbox_to_anchor=(0.5, -0.14), ncol=3, frameon=False)
 
     # ---- Panel 2: HDFI by cell type x condition (box) ----
     ax2 = fig.add_subplot(gs[0, 1])
@@ -467,8 +471,8 @@ def main():
         ax2.text(0.5, 0.5, "HDFI composite\nNOT COMPUTABLE", ha="center", va="center", transform=ax2.transAxes, color=OI["verm"])
         ax2.set_title("HDFI_mouse by cell type x condition", fontweight="bold")
 
-    # ---- Panel 3: HDFI gene mean log expr heatmap (celltype x cond rows) ----
-    ax3 = fig.add_subplot(gs[1, 0])
+    # ---- Panel 3: HDFI gene mean log expr heatmap (celltype x cond rows), spans bottom row ----
+    ax3 = fig.add_subplot(gs[1, :])
     genes_for_hm = hdfi_measured if hdfi_measured else HDFI_GENES
     row_labels, row_keys = [], []
     for ct in CT_ORDER:
@@ -492,49 +496,7 @@ def main():
     ax3.set_xticklabels(genes_for_hm, rotation=45, ha="right", fontsize=7)
     ax3.set_title("HDFI gene expression (mean logCPM, row-z)", fontweight="bold")
     ax3.set_ylabel("Cell type | condition")
-    fig.colorbar(im, ax=ax3, fraction=0.045, pad=0.02, label="row-z")
-
-    # ---- Panel 4: honest annotation strip ----
-    ax4 = fig.add_subplot(gs[1, 1]); ax4.axis("off")
-    myl = results_stats.get("Myeloid(microglia/macrophage)", {}) if hdfi_computable else {}
-    med = myl.get("medians", {})
-    def fmt(v): return f"{v:.2f}" if isinstance(v, (int, float)) and v is not None else "NA"
-    def gfmt(v):
-        if v is None: return "NA"
-        return ("<2e-16" if v < 2e-16 else f"{v:.2g}")
-    pw = myl.get("pairwise", {})
-    p_lines = []
-    for pair in ["Sham_vs_SAH24", "Sham_vs_SAH72", "SAH24_vs_SAH72"]:
-        d = pw.get(pair)
-        if d:
-            p_lines.append(f"  {pair}: p={gfmt(d['p_celllevel'])}, "
-                           f"medDiff={d['median_diff_b_minus_a']:+.2f} "
-                           f"[{d['boot95CI_median_diff'][0]:+.2f},{d['boot95CI_median_diff'][1]:+.2f}]")
-    lines = []
-    lines.append("Honesty & scope notes")
-    lines.append("-"*46)
-    lines.append("DATA: GSE311852 = MOUSE (Mus musculus) CD45+-sorted")
-    lines.append("immune cells, injured hemisphere. In-vivo cross-species")
-    lines.append("mechanistic corroboration ONLY -- NOT human, NOT SAH-CSF.")
-    lines.append(f"Cells analysed: n={n_used} (seed={rng_seed}"
-                 + (f", subsampled from {n_after}" if subsampled else "") + ")")
-    lines.append(f"Detected HDFI genes: {', '.join(hdfi_measured) if hdfi_measured else 'NONE'}")
-    lines.append(f"Not measured: {', '.join(hdfi_missing) if hdfi_missing else 'none'}")
-    lines.append(f"HDFI composite computable: {hdfi_computable}")
-    if hdfi_computable:
-        lines.append("")
-        lines.append("Myeloid HDFI_mouse medians  "
-                     f"Sham={fmt(med.get('Sham'))}, 24h={fmt(med.get('SAH24'))}, 72h={fmt(med.get('SAH72'))}")
-        lines.append(f"Kruskal-Wallis (CELL-level) p = {gfmt(myl.get('kruskal_p_celllevel'))}")
-        lines += p_lines
-    lines.append("")
-    lines.append("CAVEAT: cell-level p are PSEUDO-REPLICATED (cells are not")
-    lines.append("independent). Only 5 samples (Sham n=1, 24h n=2, 72h n=2):")
-    lines.append("sample-level testing UNDER-POWERED -> descriptive only.")
-    ax4.text(0.01, 0.98, "\n".join(lines), va="top", ha="left", fontsize=6.6,
-             family="Arial", linespacing=1.35, transform=ax4.transAxes)
-    for sp in ax4.spines.values():
-        sp.set_visible(True); sp.set_linewidth(0.7); sp.set_edgecolor("#cccccc")
+    fig.colorbar(im, ax=ax3, fraction=0.022, pad=0.02, label="row-z")
 
     fig.suptitle("Mouse SAH immune atlas (GSE311852): HDFI programme across cell types over time",
                  fontweight="bold", fontsize=11)
@@ -543,8 +505,8 @@ def main():
     fig.savefig(png, dpi=300)
     fig.savefig(pdf)
     plt.close(fig)
-    print(f"    wrote {png} ({os.path.getsize(png)} bytes)")
-    print(f"    wrote {pdf} ({os.path.getsize(pdf)} bytes)")
+    _written = [p for p in (png, pdf) if os.path.exists(p)] or sorted(glob.glob(png[:-4] + "_*.png"))
+    print("    wrote", ", ".join(os.path.basename(p) for p in _written) or "(panels split)")
 
     # =========================================================================
     # printed SUMMARY
@@ -554,6 +516,11 @@ def main():
     print("HDFI genes detected in mouse:", hdfi_measured)
     print("HDFI genes NOT detected:", hdfi_missing if hdfi_missing else "none")
     print("n_used cells:", n_used, "| by cond:", log["n_cells_by_cond"])
+    myl = results_stats.get("Myeloid(microglia/macrophage)", {}) if hdfi_computable else {}
+    med = myl.get("medians", {})
+    def gfmt(v):
+        if v is None: return "NA"
+        return ("<2e-16" if v < 2e-16 else f"{v:.2g}")
     if hdfi_computable and myl:
         print("Myeloid HDFI_mouse medians:",
               {COND_LABEL[c]: (round(med[c],3) if med.get(c) is not None else None) for c in CONDS})

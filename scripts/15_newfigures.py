@@ -1,6 +1,11 @@
 """15_newfigures.py -- WGCNA, single-cell summary, XGBoost comparison, axis schematic."""
 import os, numpy as np, pandas as pd, matplotlib
 matplotlib.use("Agg")
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.mark_whole("Fig10_axis_schematic")
+_ns.savefig_patch()
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
@@ -42,7 +47,7 @@ save(fig,"Fig7_wgcna",14,7)
 # ---------- Fig8 single-cell summary ----------
 R=pd.read_csv(os.path.join(RES,"scrna_heme_score_by_celltype.csv"))
 me=pd.read_csv(os.path.join(RES,"scrna_marker_meanexpr.csv"),index_col=0)
-fig,axes=plt.subplots(1,2,gridspec_kw={"width_ratios":[1,1.2]})
+fig,axes=plt.subplots(1,2,gridspec_kw={"width_ratios":[1,1.2],"wspace":0.85})
 ax=axes[0]
 R=R.sort_values("delta")
 cols=[OKABE["vermil"] if p<0.001 else OKABE["orange"] if p<0.05 else "#B9BEC4" for p in R.MWU_p]
@@ -68,7 +73,7 @@ xx=np.arange(len(X)); w=0.38
 ax.bar(xx-w/2,X.CV_AUC_mean,w,color=OKABE["blue"],label="discovery CV AUC",yerr=X.CV_AUC_sd,capsize=3)
 ax.bar(xx+w/2,X.external_AUC_GSE73378,w,color=OKABE["orange"],label="external AUC (remote aSAH)")
 ax.axhline(0.5,ls="--",lw=.8,c="grey"); ax.axhline(0.75,ls=":",lw=.8,c=OKABE["green"])
-ax.set_xticks(xx); ax.set_xticklabels([s.replace("_"," ") for s in X.feature_set],fontsize=7)
+ax.set_xticks(xx); ax.set_xticklabels([s.replace("_"," ") for s in X.feature_set],fontsize=7,rotation=30,ha="right")
 ax.set_ylabel("AUC"); ax.set_ylim(0,1); ax.legend(fontsize=7)
 ax.set_title("Gradient-boosting: heme panel generalises best externally",fontsize=8)
 save(fig,"Fig9_xgb",9,6)

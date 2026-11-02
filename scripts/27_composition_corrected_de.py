@@ -18,6 +18,10 @@ import numpy as np, pandas as pd
 import statsmodels.api as sm
 from statsmodels.stats.multitest import multipletests
 import matplotlib
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 

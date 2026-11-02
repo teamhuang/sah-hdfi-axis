@@ -28,6 +28,10 @@ import os, io, json, time, random, urllib.request
 import numpy as np, pandas as pd
 import gzip
 import matplotlib
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 

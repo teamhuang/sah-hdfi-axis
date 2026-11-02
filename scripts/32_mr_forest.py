@@ -5,6 +5,10 @@ Okabe-Ito colour-safe palette, Arial, no panel letters, PNG(300dpi)+vector PDF.
 Nothing is re-computed here beyond what 31_mr_real.py produced from real sumstats."""
 import os, numpy as np, pandas as pd
 import matplotlib
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
@@ -67,7 +71,6 @@ def main():
             f"{s['IVW_beta']+1.96*s['IVW_se']:.3f}), p={s['IVW_p']:.2g}; "
             f"Egger intercept p={s.get('Egger_intercept_p', float('nan')):.2g}; "
             f"Q={s['IVW_Q']:.1f} (df={int(s['IVW_df'])}); {int(s['n_instruments'])} IVs, mean F={s['F_stat_mean']:.0f}")
-    ax.text(0.0, -0.16, note, transform=ax.transAxes, fontsize=6.6, color=OI["grey"], wrap=True)
     ax.grid(axis="x", ls=":", lw=0.5, color="#cccccc", zorder=0)
     fig.tight_layout(rect=(0, 0.06, 1, 1))
     png = os.path.join(FIG, "Fig22_mr_forest.png"); pdf = os.path.join(FIG, "Fig22_mr_forest.pdf")

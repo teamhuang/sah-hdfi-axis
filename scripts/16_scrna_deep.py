@@ -5,11 +5,15 @@ import os, numpy as np, pandas as pd
 import scanpy as sc, anndata as ad
 from scipy import stats
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+
+# --- naturestyle: strip in-figure notes; split composites to independent panels; 5 cm footprint ---
+import naturestyle as _ns
+_ns.savefig_patch()
 from matplotlib import rcParams
 sc.settings.verbosity=0
 BASE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RES,FIG=os.path.join(BASE,"results"),os.path.join(BASE,"figures")
-SCRATCH="C:/Users/Admin/.qoderworkcn/workspace/muycr5n2rnyoywup/sah_rds"
+SCRATCH="H:/徐伟明论文/sah_rbc_bioinfo/_processed"
 OKABE={"blue":"#0072B2","orange":"#E69F00","green":"#009E73","vermil":"#D55E00","purple":"#CC79A7","sky":"#56B4E9"}
 rcParams.update({"font.family":"Arial","font.size":9,"axes.spines.top":False,"axes.spines.right":False,"legend.frameon":False})
 
